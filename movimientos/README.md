@@ -1,5 +1,7 @@
 # Movimientos del proyecto
 
+**Última revisión:** 27 de agosto de 2026
+
 Esta carpeta mantiene separados del código del sitio los prompts reutilizables, las decisiones y los resúmenes de cambios realizados con Codex.
 
 El procedimiento obligatorio para commits y publicaciones está definido en `FLUJO-GIT.md`.
@@ -11,3 +13,17 @@ El procedimiento obligatorio para commits y publicaciones está definido en `FLU
 - No se guardan contraseñas, tokens, claves ni otros datos sensibles.
 - Los archivos generados por Astro, Tailwind y demás herramientas permanecen en sus ubicaciones normales del proyecto.
 - Cada etapa estable debe documentarse antes del commit y completarse con su referencia de Git después del push.
+
+## Índice actual
+
+- `2026-08-27-auditoria-documentacion.md`: revisión integral y actualización de los movimientos existentes.
+- `2026-08-27-configuracion-inicial.md`: carpeta de trabajo y separación entre código y movimientos.
+- `2026-08-27-estructura-inicial.md`: estructura inicial del frontend, backend futuro y archivos generales.
+- `2026-08-27-imagenes-hero.md`: recursos fotográficos añadidos para el futuro Hero.
+- `2026-08-27-estilos-globales-base.md`: base mínima de `global.css` y Tailwind Preflight.
+- `2026-08-27-configuracion-tailwind-astro.md`: instalación y conexión de Astro, Tailwind CSS 4 y Vite.
+- `2026-08-27-layout-base.md`: estructura HTML5 y metadatos de `Layout.astro`.
+- `2026-08-27-pagina-principal-base.md`: uso del layout e integración de componentes en `index.astro`.
+- `2026-08-27-navbar-base.md`: estructura semántica e integración del Navbar.
+- `2026-08-27-estilos-navbar.md`: presentación visual del Navbar con Tailwind CSS.
+- `FLUJO-GIT.md`: procedimiento obligatorio para commits, verificaciones y pushes.

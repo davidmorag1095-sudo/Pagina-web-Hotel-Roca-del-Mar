@@ -1,5 +1,11 @@
 # Layout base del sitio
 
+**Fecha:** 27 de agosto de 2026
+
+## Objetivo
+
+Crear el layout HTML5 general del sitio, con metadatos básicos, idioma español, estilos globales y un espacio reutilizable para las páginas.
+
 ## Qué se hizo
 
 - Se creó la estructura HTML5 completa del layout general.
@@ -31,5 +37,5 @@
 
 ## Git
 
-- Commit correspondiente: `feat: add base page layout`.
-- El push se realizará junto con los demás avances estables de esta etapa.
+- Commit publicado: `fc26225` — `feat: add base page layout`.
+- Push realizado correctamente a `origin/main` el 27 de agosto de 2026, junto con los avances de la página principal y el Navbar.

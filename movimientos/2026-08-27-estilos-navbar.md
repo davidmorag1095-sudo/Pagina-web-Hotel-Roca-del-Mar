@@ -1,5 +1,11 @@
 # Estilos base del Navbar
 
+**Fecha:** 27 de agosto de 2026
+
+## Objetivo
+
+Aplicar con Tailwind CSS el estilo visual base del Navbar para que quede preparado sobre el futuro Hero del hotel.
+
 ## Qué se hizo
 
 - Se posicionó el Navbar de forma absoluta sobre el espacio del futuro Hero.
@@ -35,5 +41,5 @@
 
 ## Estado de Git
 
-- Commit correspondiente: `feat: add styled navbar`.
-- El push se realizará junto con los demás avances estables de esta etapa.
+- Commit publicado: `0b81790` — `feat: add styled navbar`.
+- Push realizado correctamente a `origin/main` el 27 de agosto de 2026, junto con el layout y la página principal.

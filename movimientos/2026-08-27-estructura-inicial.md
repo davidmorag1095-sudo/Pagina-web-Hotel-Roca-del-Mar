@@ -1,6 +1,8 @@
 # Creación de la estructura inicial
 
-## Solicitud
+**Fecha:** 27 de agosto de 2026
+
+## Objetivo
 
 Crear la estructura base del Hotel La Roca del Mar con un frontend preparado para Astro, Tailwind CSS y TypeScript; un backend reservado para el futuro; configuración de GitHub; y documentos básicos del proyecto.
 
@@ -28,12 +30,19 @@ Crear la estructura base del Hotel La Roca del Mar con un frontend preparado par
 - No se añadieron dependencias ni código visual en esta etapa.
 - Las carpetas todavía vacías incluyen `.gitkeep` para que Git pueda conservar la estructura en otras computadoras.
 
+## Verificación
+
+- Se comprobó que la estructura solicitada existiera dentro de la raíz del repositorio.
+- Se revisó que los archivos `.env.example` fueran únicamente plantillas y que los `.env` reales permanecieran excluidos.
+- No se ejecutó `npm run dev` en esta etapa porque todavía no se habían instalado las dependencias.
+
 ## Pendiente
 
-- Instalar y verificar Astro y Tailwind CSS en una etapa separada.
+- Ningún pendiente dentro de la estructura inicial; la instalación y verificación posteriores están documentadas en `2026-08-27-configuracion-tailwind-astro.md`.
 
 ## Git
 
-- Commit publicado: `5314fab` — `chore: create initial project structure`.
+- Commit principal: `5314fab` — `chore: create initial project structure`.
+- Commit documental: `90db82b` — `docs: record initial structure commit`.
 - Rama y remoto: `main` en `origin`.
-- Estado de publicación: push completado correctamente el 27 de agosto de 2026.
+- Estado de publicación: ambos commits fueron publicados correctamente el 27 de agosto de 2026.

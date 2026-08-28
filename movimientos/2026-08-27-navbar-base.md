@@ -1,5 +1,11 @@
 # Estructura base del Navbar
 
+**Fecha:** 27 de agosto de 2026
+
+## Objetivo
+
+Crear la estructura semántica inicial del Navbar e integrarla en la página principal, sin menú móvil ni comportamiento con JavaScript.
+
 ## Qué se hizo
 
 - Se creó el componente `Navbar.astro`.
@@ -27,10 +33,13 @@
 
 ## Pendiente
 
-- Diseñar el Navbar únicamente en una futura etapa solicitada.
+- Incorporar el Hero que dará contraste al Navbar transparente.
+- Ajustar su comportamiento responsive cuando se implemente el menú móvil.
 - Implementar las secciones enlazadas cuando corresponda.
 
 ## Git
 
-- Commit correspondiente: `feat: add styled navbar`.
-- El push se realizará junto con los demás avances estables de esta etapa.
+- Componente y movimientos publicados en `0b81790` — `feat: add styled navbar`.
+- Integración de `Navbar.astro` en `index.astro` publicada en `676ae39` — `feat: connect homepage to base layout`.
+- Push realizado correctamente a `origin/main` el 27 de agosto de 2026.
+- La estructura y los estilos se conservaron juntos en un solo commit porque `Navbar.astro` ya contenía ambos al organizar el historial.

@@ -1,5 +1,11 @@
 # Configuración de Tailwind CSS 4 con Astro
 
+**Fecha:** 27 de agosto de 2026
+
+## Objetivo
+
+Instalar y conectar Astro con Tailwind CSS 4 mediante el plugin oficial para Vite, dejando disponible el servidor de desarrollo con npm.
+
 ## Qué se hizo
 
 - Se instalaron Astro, Tailwind CSS 4 y el plugin oficial de Tailwind para Vite.
@@ -40,7 +46,7 @@
 
 ## Pendiente
 
-- Desarrollar el layout y las secciones visuales únicamente cuando se solicite en etapas posteriores.
+- Desarrollar los componentes y las secciones visuales únicamente cuando se soliciten en etapas posteriores.
 
 ## Revisión de seguridad previa al commit
 
@@ -50,6 +56,7 @@
 
 ## Git
 
-- Commit publicado: `71d2722` — `chore: configure Astro and Tailwind base`.
+- Commit principal: `71d2722` — `chore: configure Astro and Tailwind base`.
+- Commit documental: `99413ac` — `docs: record Astro and Tailwind base commit`.
 - Rama y remoto: `main` en `origin`.
-- Estado de publicación: push completado correctamente el 27 de agosto de 2026.
+- Estado de publicación: ambos commits fueron publicados correctamente el 27 de agosto de 2026.

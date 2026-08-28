@@ -1,5 +1,11 @@
 # Estilos globales base
 
+**Fecha:** 27 de agosto de 2026
+
+## Objetivo
+
+Preparar `global.css` como base mínima y limpia para Astro con Tailwind CSS 4, sin añadir estilos específicos de componentes o secciones.
+
 ## Qué se hizo
 
 - Se importó Tailwind CSS mediante la sintaxis oficial de Tailwind 4.
@@ -17,14 +23,19 @@
 - No se añadieron estilos de componentes, secciones ni controles.
 - No se modificaron `package.json`, `astro.config.mjs` ni `Layout.astro` porque esta etapa está limitada a la hoja global.
 
+## Verificación
+
+- Después de instalar y conectar Tailwind con Astro, `npm run dev` inició correctamente.
+- La página principal respondió con estado HTTP `200`.
+- El servidor de desarrollo se detuvo después de la comprobación.
+
 ## Pendiente
 
-- Instalar Astro, Tailwind CSS y el plugin oficial de Tailwind para Vite en una etapa separada.
-- Importar `global.css` desde el layout general cuando se implemente `Layout.astro`.
-- Verificar la compilación completa después de instalar las dependencias.
+- Incorporar la paleta del hotel y los estilos visuales únicamente cuando se diseñen sus componentes y secciones.
 
 ## Git
 
-- Commit publicado: `71d2722` — `chore: configure Astro and Tailwind base`.
+- Commit principal: `71d2722` — `chore: configure Astro and Tailwind base`.
+- Commit documental: `99413ac` — `docs: record Astro and Tailwind base commit`.
 - Rama y remoto: `main` en `origin`.
-- Estado de publicación: push completado correctamente el 27 de agosto de 2026.
+- Estado de publicación: ambos commits fueron publicados correctamente el 27 de agosto de 2026.

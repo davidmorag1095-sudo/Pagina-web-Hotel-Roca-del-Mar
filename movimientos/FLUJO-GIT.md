@@ -1,5 +1,7 @@
 # Flujo obligatorio de Git y movimientos
 
+**Fecha de adopción:** 27 de agosto de 2026
+
 ## Antes de cada commit
 
 1. Verificar que la tarea esté terminada y que el proyecto no esté roto.
