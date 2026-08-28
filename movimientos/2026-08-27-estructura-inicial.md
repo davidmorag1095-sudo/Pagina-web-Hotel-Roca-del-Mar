@@ -30,11 +30,10 @@ Crear la estructura base del Hotel La Roca del Mar con un frontend preparado par
 
 ## Pendiente
 
-- Revisar y aprobar el commit inicial.
-- Publicar el commit inicial en GitHub.
 - Instalar y verificar Astro y Tailwind CSS en una etapa separada.
 
 ## Git
 
-- Commit previsto: `chore: create initial project structure`.
-- Estado de publicación: pendiente de aprobación y push.
+- Commit publicado: `5314fab` — `chore: create initial project structure`.
+- Rama y remoto: `main` en `origin`.
+- Estado de publicación: push completado correctamente el 27 de agosto de 2026.
