@@ -1,1 +1,8 @@
-/* Los estilos globales se definirán en una etapa posterior. */
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body {
+    min-height: 100%;
+  }
+}

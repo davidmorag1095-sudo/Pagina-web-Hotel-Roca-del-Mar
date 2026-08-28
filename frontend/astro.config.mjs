@@ -1,1 +1,8 @@
-// La configuración de Astro se añadirá en la etapa de instalación.
+import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
+
+export default defineConfig({
+  vite: {
+    plugins: [tailwindcss()],
+  },
+});
