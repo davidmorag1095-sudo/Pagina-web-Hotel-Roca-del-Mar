@@ -25,4 +25,6 @@
 
 ## Git
 
-- No se realizó commit ni push por solicitud del usuario.
+- Commit publicado: `71d2722` — `chore: configure Astro and Tailwind base`.
+- Rama y remoto: `main` en `origin`.
+- Estado de publicación: push completado correctamente el 27 de agosto de 2026.
