@@ -52,5 +52,6 @@ Revisar completamente `movimientos/` y asegurar que el trabajo realizado pueda r
 
 ## Git
 
-- Commit correspondiente: `docs: complete development movement records`.
-- El push se realizará a `origin/main` después de informar los archivos y la verificación al usuario.
+- Commit publicado: `446744b` — `docs: complete development movement records`.
+- Push realizado correctamente a `origin/main` el 27 de agosto de 2026.
+- Esta referencia se guarda mediante `docs: record movement audit commit`; según `FLUJO-GIT.md`, ese commit documental no necesita registrarse a sí mismo.
