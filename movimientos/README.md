@@ -16,6 +16,8 @@ El procedimiento obligatorio para commits y publicaciones está definido en `FLU
 
 ## Índice actual
 
+- `2026-08-28-estrategia-desktop-primero.md`: decisión de completar primero toda la versión de escritorio y abordar responsive en una etapa posterior.
+- `2026-08-28-hero-composicion-superior-completa.md`: composición final de Navbar, Hero, beneficios y barra flotante basada en la referencia visual.
 - `2026-08-28-hero-parte-1-base-visual.md`: base visual responsive del Hero con imágenes y overlay degradado.
 - `2026-08-28-preparacion-tecnica-entorno.md`: preparación de Node.js, TypeScript, scripts npm y documentación para continuar desde otra computadora.
 - `2026-08-27-auditoria-documentacion.md`: revisión integral y actualización de los movimientos existentes.
