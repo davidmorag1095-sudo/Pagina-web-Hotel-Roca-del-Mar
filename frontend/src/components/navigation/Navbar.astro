@@ -1,54 +1,44 @@
+---
+import { Image } from "astro:assets";
+import hotelLogo from "../../assets/logo/logo-hotel-la-roca-del-mar.png";
+---
+
 <header class="absolute inset-x-0 top-0 z-50 w-full bg-transparent text-white">
   <nav
-    class="mx-auto grid h-[88px] w-full grid-cols-[1fr_auto_1fr] items-center px-6 md:px-10 lg:px-16"
+    class="mx-auto grid h-[104px] w-full max-w-[1536px] grid-cols-[1fr_auto] items-center px-5 sm:px-8 md:grid-cols-[1fr_auto_1fr] lg:px-[5.5vw]"
     aria-label="Navegación principal"
   >
     <a
-      class="justify-self-start whitespace-nowrap text-lg font-semibold tracking-[0.08em] text-white transition-opacity duration-200 hover:opacity-80"
+      class="flex min-w-0 items-center gap-3 justify-self-start text-white transition-opacity duration-200 hover:opacity-85"
       href="/"
       aria-label="Hotel La Roca del Mar, página de inicio"
     >
-      Hotel La Roca del Mar
+      <span class="grid size-14 shrink-0 place-items-center overflow-hidden rounded-full bg-white/95">
+        <Image
+          class="h-12 w-auto max-w-none -translate-x-0.5"
+          src={hotelLogo}
+          alt=""
+          height={48}
+        />
+      </span>
+
+      <span class="hidden min-w-0 sm:block">
+        <span class="block whitespace-nowrap font-serif text-xl font-semibold leading-tight tracking-wide">
+          Hotel La Roca del Mar
+        </span>
+        <span class="mt-0.5 block text-sm leading-tight text-white/80">Playa, Mar y Sol</span>
+      </span>
     </a>
 
-    <ul class="flex items-center gap-6 lg:gap-10">
-      <li>
-        <a
-          class="border-b border-white/80 pb-1 text-sm font-medium tracking-wide text-white transition-opacity duration-200 hover:opacity-75"
-          href="/"
-          aria-current="page"
-        >
-          Inicio
-        </a>
-      </li>
-      <li>
-        <a
-          class="text-sm font-medium tracking-wide text-white transition-opacity duration-200 hover:opacity-75"
-          href="#galeria"
-        >
-          Galería
-        </a>
-      </li>
-      <li>
-        <a
-          class="text-sm font-medium tracking-wide text-white transition-opacity duration-200 hover:opacity-75"
-          href="#ubicacion"
-        >
-          Ubicación
-        </a>
-      </li>
-      <li>
-        <a
-          class="text-sm font-medium tracking-wide text-white transition-opacity duration-200 hover:opacity-75"
-          href="#contacto"
-        >
-          Contacto
-        </a>
-      </li>
+    <ul class="hidden items-center gap-7 md:flex lg:gap-10">
+      <li><a class="border-b border-white/80 pb-1.5 text-sm font-semibold tracking-wide text-white transition-opacity duration-200 hover:opacity-75" href="/" aria-current="page">Inicio</a></li>
+      <li><a class="text-sm font-semibold tracking-wide text-white transition-opacity duration-200 hover:opacity-75" href="#galeria">Galería</a></li>
+      <li><a class="text-sm font-semibold tracking-wide text-white transition-opacity duration-200 hover:opacity-75" href="#ubicacion">Ubicación</a></li>
+      <li><a class="text-sm font-semibold tracking-wide text-white transition-opacity duration-200 hover:opacity-75" href="#contacto">Contacto</a></li>
     </ul>
 
     <a
-      class="justify-self-end rounded-full bg-[#e85d4a] px-6 py-3 text-sm font-semibold tracking-wide text-white transition-colors duration-200 hover:bg-[#cf4c3a]"
+      class="justify-self-end rounded-full border border-white/50 bg-[#d72f2f] px-5 py-3 text-sm font-semibold tracking-wide text-white transition-colors duration-200 hover:bg-[#bd2424] sm:px-8 lg:mr-3"
       href="#reservar"
     >
       Reservar
