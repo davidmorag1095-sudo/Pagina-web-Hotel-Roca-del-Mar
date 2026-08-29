@@ -1,6 +1,6 @@
 # Movimientos del proyecto
 
-**Última revisión:** 27 de agosto de 2026
+**Última revisión:** 28 de agosto de 2026
 
 Esta carpeta mantiene separados del código del sitio los prompts reutilizables, las decisiones y los resúmenes de cambios realizados con Codex.
 
@@ -16,6 +16,7 @@ El procedimiento obligatorio para commits y publicaciones está definido en `FLU
 
 ## Índice actual
 
+- `2026-08-28-preparacion-tecnica-entorno.md`: preparación de Node.js, TypeScript, scripts npm y documentación para continuar desde otra computadora.
 - `2026-08-27-auditoria-documentacion.md`: revisión integral y actualización de los movimientos existentes.
 - `2026-08-27-configuracion-inicial.md`: carpeta de trabajo y separación entre código y movimientos.
 - `2026-08-27-estructura-inicial.md`: estructura inicial del frontend, backend futuro y archivos generales.
