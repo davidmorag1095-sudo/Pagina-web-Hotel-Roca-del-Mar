@@ -16,6 +16,7 @@ El procedimiento obligatorio para commits y publicaciones está definido en `FLU
 
 ## Índice actual
 
+- `2026-08-28-hero-parte-1-base-visual.md`: base visual responsive del Hero con imágenes y overlay degradado.
 - `2026-08-28-preparacion-tecnica-entorno.md`: preparación de Node.js, TypeScript, scripts npm y documentación para continuar desde otra computadora.
 - `2026-08-27-auditoria-documentacion.md`: revisión integral y actualización de los movimientos existentes.
 - `2026-08-27-configuracion-inicial.md`: carpeta de trabajo y separación entre código y movimientos.

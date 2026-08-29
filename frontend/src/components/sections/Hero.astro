@@ -1,0 +1,25 @@
+---
+import heroDesktop from "../../assets/images/hero/hero-desktop.jpg";
+import heroMobile from "../../assets/images/hero/hero-mobile.jpg";
+---
+
+<section class="relative isolate min-h-screen min-h-svh w-full overflow-hidden bg-slate-950">
+  <picture class="absolute inset-0 -z-20 block h-full w-full">
+    <source media="(max-width: 767px)" srcset={heroMobile.src} />
+    <img
+      class="h-full w-full object-cover object-center"
+      src={heroDesktop.src}
+      alt=""
+      width={heroDesktop.width}
+      height={heroDesktop.height}
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+    />
+  </picture>
+
+  <div
+    class="absolute inset-0 -z-10 bg-gradient-to-r from-black/85 via-black/55 to-black/20"
+    aria-hidden="true"
+  ></div>
+</section>
