@@ -53,4 +53,6 @@ Acercar el bloque superior del sitio a la referencia visual proporcionada, repro
 
 ## Git
 
-- No se realizó commit ni push en esta etapa.
+- Commit principal: `4cf7b5f` — `feat: complete hero desktop composition`.
+- Rama y remoto: `main` en `origin`.
+- Estado de publicación: commit publicado correctamente el 29 de agosto de 2026.

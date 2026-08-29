@@ -37,4 +37,6 @@ El orden acordado es:
 
 ## Git
 
-- No se realizó commit ni push como parte de este registro.
+- Commit documental: `8f73cee` — `docs: record desktop-first development strategy`.
+- Rama y remoto: `main` en `origin`.
+- Estado de publicación: commit publicado correctamente el 29 de agosto de 2026.
