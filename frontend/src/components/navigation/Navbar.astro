@@ -1,6 +1,5 @@
 ---
-import { Image } from "astro:assets";
-import hotelLogo from "../../assets/logo/logo-hotel-la-roca-del-mar.png";
+import hotelLogo from "../../assets/logo/logo-hotel-la-roca-del-mar.svg";
 ---
 
 <header class="absolute inset-x-0 top-0 z-50 w-full bg-[linear-gradient(90deg,#00142a_0%,#00142a_28%,rgba(0,20,42,0.82)_50%,rgba(0,20,42,0)_82%)] text-white">
@@ -13,13 +12,13 @@ import hotelLogo from "../../assets/logo/logo-hotel-la-roca-del-mar.png";
       href="/"
       aria-label="Hotel La Roca del Mar, página de inicio"
     >
-      <Image
+      <img
         class="h-auto w-[180px] sm:w-[210px] lg:w-[270px]"
-        src={hotelLogo}
+        src={hotelLogo.src}
         alt="Hotel La Roca del Mar — Playa, Mar y Sol"
         width={540}
-        format="webp"
-        quality={95}
+        height={180}
+        decoding="async"
       />
     </a>
 

@@ -1,6 +1,5 @@
 ---
-import { Image } from "astro:assets";
-import hotelLogo from "../../assets/logo/logo-hotel-la-roca-del-mar.png";
+import hotelLogo from "../../assets/logo/logo-hotel-la-roca-del-mar.svg";
 import { contact } from "../../config/contact";
 ---
 
@@ -8,16 +7,7 @@ import { contact } from "../../config/contact";
   <div class="mx-auto grid max-w-[1240px] gap-7 py-5 md:grid-cols-2 lg:grid-cols-[1.35fr_repeat(5,minmax(0,1fr))] lg:items-center lg:gap-5">
     <div class="md:col-span-2 lg:col-span-1">
       <a href="/" aria-label="Hotel La Roca del Mar, página de inicio" class="relative inline-block w-[230px] max-w-full drop-shadow-[0_3px_8px_rgba(0,0,0,0.24)]">
-        <Image src={hotelLogo} alt="Hotel La Roca del Mar" width={230} format="webp" quality={95} class="block h-auto w-full" />
-        <Image
-          src={hotelLogo}
-          alt=""
-          width={230}
-          format="webp"
-          quality={95}
-          aria-hidden="true"
-          class="pointer-events-none absolute inset-0 h-full w-full brightness-0 invert [clip-path:inset(0_0_0_43%)]"
-        />
+        <img src={hotelLogo.src} alt="Hotel La Roca del Mar" width="230" height="77" loading="lazy" decoding="async" class="block h-auto w-full" />
       </a>
     </div>
 
