@@ -17,6 +17,7 @@ import parkingEntrance from "../assets/images/entrada-parqueo/Foto entrada al ho
 import rearParking from "../assets/images/entrada-parqueo/Parqueo parte trase desde arriba sol.png";
 import parkingEntrance2 from "../assets/images/entrada-parqueo/Hotel vista inicial desde afuera sol.png";
 const currentPoolOverview = { ...poolOverview };
+const currentPalms = { ...palms };
 
 // En desarrollo Astro conserva la URL al reemplazar una foto con el mismo nombre.
 // Vite renueva esta revisión al recargar el módulo o cambiar la imagen importada.
@@ -24,6 +25,9 @@ const currentPoolOverview = { ...poolOverview };
 if (import.meta.env.DEV) {
   const separator = currentPoolOverview.src.includes("?") ? "&" : "?";
   currentPoolOverview.src += `${separator}v=${Date.now().toString(36)}`;
+
+  const palmsSeparator = currentPalms.src.includes("?") ? "&" : "?";
+  currentPalms.src += `${palmsSeparator}v=${Date.now().toString(36)}`;
 }
 
 export interface GalleryPhoto {
@@ -79,7 +83,7 @@ export const galleryPhotos: GalleryPhoto[] = [
     category: "Piscina",
   },
   {
-    image: palms,
+    image: currentPalms,
     alt: "Palmeras y jardines junto a la escalera roja del hotel",
     caption: "Entre palmeras y jardines",
     category: "Exteriores",
