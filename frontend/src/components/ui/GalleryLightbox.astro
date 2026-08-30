@@ -46,8 +46,9 @@ const slides = await Promise.all(photos.map(async (photo) => {
         <button type="button" data-gallery-previous aria-label="Foto anterior" class="grid size-12 cursor-pointer place-items-center rounded-full border border-white/25 text-2xl transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
           <span aria-hidden="true">←</span>
         </button>
-        <figure class="relative h-full min-h-0">
-          <img data-gallery-image alt="" decoding="async" class="h-full w-full object-contain" />
+        <figure class="relative h-full min-h-0 overflow-hidden">
+          <img data-gallery-image alt="" decoding="async" class="absolute inset-0 h-full w-full object-contain opacity-0 transition-opacity duration-700 ease-out" />
+          <img data-gallery-image alt="" decoding="async" class="absolute inset-0 h-full w-full object-contain opacity-0 transition-opacity duration-700 ease-out" />
           <p data-gallery-status role="status" class="pointer-events-none absolute inset-x-4 top-1/2 text-center text-sm text-white/80"></p>
         </figure>
         <button type="button" data-gallery-next aria-label="Foto siguiente" class="grid size-12 cursor-pointer place-items-center rounded-full border border-white/25 text-2xl transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
