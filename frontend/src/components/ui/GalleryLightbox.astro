@@ -4,9 +4,21 @@ import type { GalleryPhoto } from "../../data/gallery";
 
 interface Props {
   photos: GalleryPhoto[];
+  galleryId?: string;
+  title?: string;
+  triggerLabel?: string;
+  closeLabel?: string;
 }
 
-const { photos } = Astro.props;
+const {
+  photos,
+  galleryId = "hotel-gallery",
+  title = "Galería del hotel",
+  triggerLabel = "Ver galería completa",
+  closeLabel = "Cerrar galería",
+} = Astro.props;
+const dialogId = `${galleryId}-dialog`;
+const titleId = `${galleryId}-title`;
 const slides = await Promise.all(photos.map(async (photo) => {
   const optimized = await getImage({
     src: photo.image,
@@ -23,26 +35,26 @@ const slides = await Promise.all(photos.map(async (photo) => {
     type="button"
     data-gallery-open
     aria-haspopup="dialog"
-    aria-controls="hotel-gallery-dialog"
+    aria-controls={dialogId}
     class="mt-8 inline-flex min-h-12 cursor-pointer items-center gap-4 border-b border-[#d72f2f]/50 pb-1 text-sm font-semibold tracking-wide transition-colors hover:text-[#bd2424] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d72f2f]"
   >
-    Ver galería completa <span aria-hidden="true" class="text-xl text-[#d72f2f]">→</span>
+    {triggerLabel} <span aria-hidden="true" class="text-xl text-[#d72f2f]">→</span>
   </button>
 
   <dialog
-    id="hotel-gallery-dialog"
-    aria-labelledby="gallery-title"
+    id={dialogId}
+    aria-labelledby={titleId}
     class="fixed inset-0 m-auto h-[min(88vh,820px)] max-h-none w-[min(88vw,1220px)] max-w-none overflow-hidden rounded-2xl border border-[#d6ad68]/45 bg-[linear-gradient(145deg,#031b2a_0%,#062638_100%)] p-0 text-white shadow-[0_28px_90px_rgba(2,14,24,0.45)] backdrop:bg-[#031b2a]/50 backdrop:backdrop-blur-[2px]"
   >
     <div class="flex h-full flex-col">
       <header class="relative shrink-0 px-20 pb-3 pt-5 text-center">
-        <h2 id="gallery-title" class="font-serif text-[32px] leading-tight tracking-[-0.01em] text-[#f7f4ee]">Galería del hotel</h2>
+        <h2 id={titleId} class="font-serif text-[32px] leading-tight tracking-[-0.01em] text-[#f7f4ee]">{title}</h2>
         <div aria-hidden="true" class="mx-auto mt-3 flex max-w-72 items-center justify-center gap-2 text-[#d6ad68]/70">
           <span class="h-px flex-1 bg-current"></span>
           <span class="size-1.5 rotate-45 border border-current"></span>
           <span class="h-px flex-1 bg-current"></span>
         </div>
-        <button type="button" data-gallery-close autofocus aria-label="Cerrar galería" class="absolute right-5 top-5 grid size-12 cursor-pointer place-items-center rounded-full border border-[#d6ad68]/55 text-[#e1bd7d] transition-colors hover:bg-[#d6ad68]/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d6ad68]">
+        <button type="button" data-gallery-close autofocus aria-label={closeLabel} class="absolute right-5 top-5 grid size-12 cursor-pointer place-items-center rounded-full border border-[#d6ad68]/55 text-[#e1bd7d] transition-colors hover:bg-[#d6ad68]/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d6ad68]">
           <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" d="m6 6 12 12M18 6 6 18" /></svg>
         </button>
       </header>

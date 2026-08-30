@@ -1,0 +1,107 @@
+---
+import { Image } from "astro:assets";
+import { roomImages } from "../../data/room-images";
+import { roomGalleryPhotos } from "../../data/room-gallery";
+import GalleryLightbox from "../ui/GalleryLightbox.astro";
+
+const rooms = [
+  {
+    name: "Habitación doble",
+    climate: "Ventilador / sin aire acondicionado",
+    distribution: "Por confirmar",
+    image: undefined,
+    alt: "",
+  },
+  {
+    name: "Habitación doble",
+    climate: "Aire acondicionado",
+    distribution: "Dos camas en la fotografía actual",
+    image: roomImages.doubleWithAir,
+    alt: "Habitación doble del hotel con dos camas",
+  },
+  {
+    name: "Habitación familiar",
+    climate: "Aire acondicionado",
+    distribution: "Dos camas en la fotografía actual",
+    image: roomImages.family,
+    alt: "Habitación familiar del hotel con dos camas y aire acondicionado",
+  },
+] as const;
+---
+
+<section id="habitaciones" aria-labelledby="rooms-heading" class="bg-[#f1ece4] px-[4vw] py-12 text-[#031b2a]">
+  <div class="mx-auto max-w-[1240px]">
+    <header class="mx-auto max-w-2xl text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[#c79042]">Descanso y comodidad</p>
+      <h2 id="rooms-heading" class="mt-2 font-serif text-[clamp(2.25rem,3vw,3rem)] leading-tight tracking-[-0.025em]">
+        Nuestras habitaciones
+      </h2>
+      <p class="mx-auto mt-3 max-w-xl text-[15px] leading-6 text-[#56666e]">
+        Tres alternativas para elegir la climatización y distribución más adecuada para tu estadía.
+      </p>
+    </header>
+
+    <div class="mx-auto mt-6 flex max-w-3xl items-center justify-center gap-3 rounded-full border border-[#c79042]/25 bg-[#f7f4ee] px-6 py-3 text-sm text-[#324c58]">
+      <span class="font-semibold text-[#173847]">Todas incluyen:</span>
+      <span>Baño privado</span>
+      <span aria-hidden="true" class="text-[#c79042]">•</span>
+      <span>TV</span>
+      <span aria-hidden="true" class="text-[#c79042]">•</span>
+      <span>Wi-Fi</span>
+    </div>
+
+    <div class="mt-7 grid grid-cols-3 gap-4">
+      {rooms.map((room) => (
+        <article class="grid h-[395px] grid-rows-[200px_minmax(0,1fr)] overflow-hidden rounded-2xl border border-[#031b2a]/10 bg-[#f7f4ee] shadow-[0_14px_32px_rgba(3,27,42,0.07)]">
+          <figure class="overflow-hidden bg-[#ded7cc]">
+            {room.image ? (
+              <Image
+                src={room.image}
+                alt={room.alt}
+                width={650}
+                format="webp"
+                quality={84}
+                loading="lazy"
+                class="h-full w-full object-contain"
+              />
+            ) : (
+              <div class="flex h-full flex-col items-center justify-center gap-3 px-6 text-center text-[#6b777c]">
+                <svg class="size-8 text-[#c79042]" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                  <rect x="3.5" y="5.5" width="25" height="21" rx="2.5" stroke="currentColor" />
+                  <path d="m7 22 6-6 4 4 3-3 5 5M21.5 11.5h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span class="text-xs font-semibold uppercase tracking-[0.13em]">Fotografía real pendiente</span>
+              </div>
+            )}
+          </figure>
+
+          <div class="flex min-h-0 flex-col p-5">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#bd2424]">{room.climate}</p>
+            <h3 class="mt-1.5 font-serif text-[1.65rem] leading-tight">{room.name}</h3>
+
+            <dl class="mt-auto border-t border-[#031b2a]/10 pt-4 text-sm">
+              <div>
+                <dt class="text-xs font-semibold uppercase tracking-[0.1em] text-[#7b8589]">Distribución</dt>
+                <dd class="mt-1 text-[#324c58]">{room.distribution}</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <p class="mt-5 text-center text-xs text-[#6b777c]">
+      La capacidad exacta y las configuraciones disponibles se confirman al reservar.
+    </p>
+
+    <div class="text-center">
+      <GalleryLightbox
+        photos={roomGalleryPhotos}
+        galleryId="room-gallery"
+        title="Galería de habitaciones"
+        triggerLabel="Ver galería de habitaciones"
+        closeLabel="Cerrar galería de habitaciones"
+      />
+    </div>
+  </div>
+</section>
