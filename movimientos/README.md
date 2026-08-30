@@ -16,7 +16,8 @@ El procedimiento obligatorio para commits y publicaciones está definido en `FLU
 
 ## Índice actual
 
-- `2026-08-29-estancia-desktop-galeria.md`: sección de estancia desktop con dos fotografías y lightbox de las 15 imágenes reales del hotel.
+- `2026-08-29-integracion-fotos-habitaciones-atardecer.md`: integración de dos fotos de habitación, selección visual provisional para la habitación familiar y una nueva foto de atardecer en el lightbox.
+- `2026-08-29-estancia-desktop-galeria.md`: sección de estancia desktop con un collage de tres fotografías y lightbox; el catálogo actual reúne 16 imágenes y excluye del recorrido las tres visibles.
 - `2026-08-29-hero-alineacion-desktop-sin-barra.md`: alineación horizontal del Hero y Navbar en escritorio y eliminación de la barra flotante y su espacio inferior.
 - `2026-08-29-hero-nueva-fotografia.md`: corrección de las referencias rotas del Hero e integración de la nueva fotografía, sin adaptación móvil ni cambios en el contenido.
 - `2026-08-28-estrategia-desktop-primero.md`: decisión de completar primero toda la versión de escritorio y abordar responsive en una etapa posterior.

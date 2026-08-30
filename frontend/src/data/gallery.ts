@@ -7,6 +7,7 @@ import palms from "../assets/images/exteriores/Palmeras entradas al hotel al fre
 import cactus from "../assets/images/exteriores/Foto cactus con fondo de piscina y hotel sol.png";
 import courtyard from "../assets/images/exteriores/Foto piscina desde el lado de la soda sol.png";
 import sloth from "../assets/images/exteriores/Oso peresozo  sol.png";
+import sunset from "../assets/images/exteriores/Atardecer.jpg";
 import sea from "../assets/images/mar/Vista trasera Playa sol.png";
 import leftWalkway from "../assets/images/pasillos/Pasillo izquierdo arriba sol.png";
 import mainWalkway from "../assets/images/pasillos/Pasillo principal arriba sol.png";
@@ -14,7 +15,7 @@ import rearWalkway from "../assets/images/pasillos/Pasillo trasero arriba sol.pn
 import receptionEntrance from "../assets/images/entrada-parqueo/Entrada principal hotel con vista a la recepcion y parqueo de fondo sol.png";
 import parkingEntrance from "../assets/images/entrada-parqueo/Foto entrada al hotel con vista a todo el parqueo, sol.png";
 import rearParking from "../assets/images/entrada-parqueo/Parqueo parte trase desde arriba sol.png";
-
+import parkingEntrance2 from "../assets/images/entrada-parqueo/Hotel vista inicial desde afuera sol.png";
 const currentPoolOverview = { ...poolOverview };
 
 // En desarrollo Astro conserva la URL al reemplazar una foto con el mismo nombre.
@@ -34,6 +35,24 @@ export interface GalleryPhoto {
 }
 
 export const galleryPhotos: GalleryPhoto[] = [
+  {
+    image: parkingEntrance2,
+    alt: "Nuestras instalaciones por fuera",
+    caption: "La llegada al hotel",
+    category: "Entrada y parqueo",
+  },
+  {
+    image: receptionEntrance,
+    alt: "Entrada principal con vista hacia la recepción y el parqueo",
+    caption: "La llegada al hotel",
+    category: "Entrada y parqueo",
+  },
+  {
+    image: parkingEntrance,
+    alt: "Entrada del hotel con vista al área de estacionamiento",
+    caption: "Entrada y estacionamiento",
+    category: "Entrada y parqueo",
+  },
   {
     image: currentPoolOverview,
     alt: "Piscina del hotel rodeada de jardines y palmeras, vista desde arriba",
@@ -85,6 +104,12 @@ export const galleryPhotos: GalleryPhoto[] = [
     category: "Exteriores",
   },
   {
+    image: sunset,
+    alt: "Atardecer sobre el hotel, las palmeras y la piscina",
+    caption: "Atardecer desde el hotel",
+    category: "Atardecer",
+  },
+  {
     image: sea,
     alt: "Vista del mar y las palmeras desde la parte trasera del hotel",
     caption: "El Pacífico, a pasos del hotel",
@@ -107,18 +132,6 @@ export const galleryPhotos: GalleryPhoto[] = [
     alt: "Pasillo trasero de la planta alta del hotel",
     caption: "Pasillo trasero",
     category: "Pasillos",
-  },
-  {
-    image: receptionEntrance,
-    alt: "Entrada principal con vista hacia la recepción y el parqueo",
-    caption: "La llegada al hotel",
-    category: "Entrada y parqueo",
-  },
-  {
-    image: parkingEntrance,
-    alt: "Entrada del hotel con vista al área de estacionamiento",
-    caption: "Entrada y estacionamiento",
-    category: "Entrada y parqueo",
   },
   {
     image: rearParking,
