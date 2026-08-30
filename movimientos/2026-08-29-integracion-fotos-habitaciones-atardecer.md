@@ -32,6 +32,18 @@ Incorporar las nuevas fotografías reales al catálogo visual del proyecto sin c
 - No se detectó desbordamiento horizontal ni errores en la consola.
 - `git diff --check`: correcto; sin errores de espacios en los archivos modificados y sin espacios finales en los nuevos archivos de texto.
 
+## Actualización posterior de recursos
+
+El 30 de agosto de 2026 se incorporó un segundo lote de fotografías reales, organizado con nombres descriptivos dentro de las carpetas existentes:
+
+- Dos fotografías de la habitación doble con ventilador y sin aire acondicionado.
+- Tres fotografías de la habitación doble con aire acondicionado.
+- Una única fotografía de la habitación familiar, donde se observa una cama y un camarote.
+- La fotografía exterior `Copo Soda.jpg`, conservada como recurso disponible para una integración posterior.
+- Se sustituyó el contenido de `Palmeras entradas al hotel al frente de soda sol.png` por la versión real más reciente, manteniendo el nombre y la ruta para no romper referencias.
+
+Las seis nuevas fotografías de habitaciones quedaron disponibles para la sección y su lightbox. No se eliminaron los recursos anteriores ni se incorporó `Copo Soda.jpg` en una sección sin una decisión visual explícita.
+
 ## Git
 
 - No se realizó commit ni push por instrucción del usuario.
