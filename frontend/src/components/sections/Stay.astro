@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import GalleryLightbox from "../ui/GalleryLightbox.astro";
+import { galleryPhotos } from "../../data/gallery";
+
+const featuredPhotos = galleryPhotos.filter((photo) => photo.featured);
+const lightboxPhotos = galleryPhotos.filter((photo) => !photo.featured);
+---
+
+<section id="galeria" aria-labelledby="stay-heading" class="bg-[#f7f4ee] px-[4vw] py-24 text-[#031b2a]">
+  <div class="grid grid-cols-[minmax(0,0.85fr)_minmax(0,1.5fr)] items-center gap-[5vw]">
+    <div class="max-w-[480px]">
+      <h2 id="stay-heading" class="font-serif text-[clamp(2.5rem,3.4vw,3.5rem)] leading-[1.08] tracking-[-0.025em]">
+        Una estancia tranquila en Puntarenas
+      </h2>
+      <div class="mt-7 space-y-4 text-[17px] leading-[1.8] text-[#475963]">
+        <p>
+          Entre palmeras, jardines y una piscina al aire libre, encuentra un lugar
+          para bajar el ritmo y disfrutar de Puntarenas con calma.
+        </p>
+        <p>
+          En Hotel La Roca del Mar, la cercanía del Pacífico y la atención directa
+          acompañan una estadía sencilla, cómoda y sin prisas.
+        </p>
+      </div>
+      <GalleryLightbox photos={galleryPhotos} />
+    </div>
+
+    <div class="grid grid-cols-2 items-start gap-5">
+      {featuredPhotos.map((photo, index) => (
+        <figure class:list={["overflow-hidden rounded-xl", { "mt-10": index === 1 }]}>
+          <Image
+            src={photo.image}
+            alt={photo.alt}
+            width={800}
+            format="webp"
+            quality={82}
+            loading="lazy"
+            class="aspect-[4/5] h-auto w-full object-cover"
+          />
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
