@@ -4,13 +4,13 @@
 
 ## Objetivo
 
-Construir únicamente la sección desktop «Una estancia tranquila en Puntarenas» debajo del Hero, con texto a la izquierda, dos fotografías a la derecha y una galería sobre la misma página.
+Construir únicamente la sección desktop «Una estancia tranquila en Puntarenas» debajo del Hero, con texto a la izquierda, fotografías reales a la derecha y una galería sobre la misma página.
 
 ## Cambios realizados
 
 - Se creó `Stay.astro` en la carpeta existente `src/components/sections/`.
 - Se mantuvo la identidad visual del sitio con fondo crema, título serif azul marino y acceso textual «Ver galería completa →».
-- Se eligieron la vista de la piscina desde la esquina derecha superior y las palmeras junto a la escalera del hotel como fotografías destacadas.
+- La composición visible utiliza una vista exterior de la piscina, jardines y edificio desde la soda, acompañada por la vista real del Pacífico y otro encuadre horizontal de los jardines y la piscina.
 - Se integró la sección debajo del Hero mediante una importación y una etiqueta en `index.astro`, sin crear páginas ni una estructura paralela.
 - Se creó un lightbox con `dialog` nativo y comportamiento en TypeScript, ambos dentro de `src/components/ui/`.
 - Se centralizaron las fotografías y sus textos alternativos en `src/data/gallery.ts`.
@@ -68,7 +68,15 @@ Construir únicamente la sección desktop «Una estancia tranquila en Puntarenas
 - La fotografía ocupa el área principal del panel y utiliza dos capas superpuestas para producir un crossfade suave de 700 ms sin destellos entre imágenes.
 - El autoplay cambia de foto cada 4 segundos, vuelve de la última a la primera y se reinicia después de usar las flechas visuales o las teclas de dirección.
 - Se conservaron X, flechas, caption, contador, categoría, cierre con Escape, navegación por teclado y el backdrop azul semitransparente con blur ligero.
-- Las dos fotografías visibles en «Una estancia tranquila en Puntarenas» se excluyeron del recorrido del modal; permanecen disponibles como imágenes destacadas de la sección.
+- Las tres fotografías visibles en la composición se excluyeron del recorrido del modal; las otras 12 permanecen disponibles en el lightbox.
+
+## Ajuste posterior de la composición fotográfica desktop
+
+- Se consolidó una composición editorial compacta: el texto ocupa aproximadamente un tercio del ancho y el collage fotográfico los dos tercios restantes.
+- El collage utiliza una imagen principal horizontal y dos imágenes reales apiladas a la derecha, con separación de 12 px, bordes redondeados uniformes y recorte proporcional sin deformaciones.
+- El bloque fotográfico se limitó a un máximo de 760 px de ancho y entre 270 y 320 px de alto para que funcione como introducción visual sin dominar la sección.
+- Se redujeron la escala del título, el cuerpo de texto, los espacios verticales y el padding de la sección para disminuir considerablemente su altura sin cambiar el contenido de los dos párrafos.
+- La referencia se utilizó únicamente para orientar estructura, escala y balance. «Ver galería completa →» y todo el comportamiento del lightbox permanecieron sin cambios; su recorrido contiene las 12 fotos que no aparecen en la composición.
 
 ## Pendiente
 
