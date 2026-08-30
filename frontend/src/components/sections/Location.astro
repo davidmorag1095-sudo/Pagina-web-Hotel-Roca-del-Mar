@@ -1,0 +1,46 @@
+---
+import { contact } from "../../config/contact";
+---
+
+<section id="ubicacion" aria-labelledby="location-heading" class="bg-[#f7f4ee] px-[4vw] py-9 text-[#031b2a]">
+  <div class="mx-auto grid max-w-[1240px] items-center gap-8 lg:grid-cols-[minmax(250px,0.68fr)_minmax(0,1.72fr)] lg:gap-10">
+    <div>
+      <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#c79042]">Ubicación</p>
+      <h2 id="location-heading" class="mt-1.5 max-w-[330px] font-serif text-[clamp(2rem,2.7vw,2.7rem)] leading-[1.02] tracking-[-0.025em]">
+        Encuéntranos en Barrio El Cocal
+      </h2>
+      <div aria-hidden="true" class="mt-3 h-0.5 w-16 bg-[#c79042]"></div>
+      <p class="mt-3.5 max-w-[350px] text-sm leading-[1.6] text-[#56666e]">
+        Hotel La Roca del Mar está en Calle 44, Barrio El Cocal, Puntarenas, Costa Rica, cerca del mar y con acceso directo desde la ciudad.
+      </p>
+
+      <div class="mt-4 text-[13px] font-semibold leading-6 text-[#082b42] lg:whitespace-nowrap">
+        <span>Calle 44, Barrio El Cocal, Puntarenas, Costa Rica</span>
+      </div>
+
+      <a
+        href={contact.directionsUrl}
+        target="_blank"
+        rel="noreferrer"
+        class="mt-4 inline-flex min-h-10 items-center justify-center gap-2.5 rounded-full bg-[#082b42] px-6 text-sm font-semibold text-white shadow-[0_8px_18px_rgba(3,27,42,0.16)] transition-colors hover:bg-[#0b3b59] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#082b42]"
+      >
+        <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12Z" />
+          <circle cx="12" cy="9" r="2.2" />
+        </svg>
+        Cómo llegar
+      </a>
+    </div>
+
+    <div class="h-[280px] overflow-hidden rounded-2xl border border-[#031b2a]/10 bg-[#e5ded3] shadow-[0_14px_36px_rgba(3,27,42,0.1)]">
+      <iframe
+        src={contact.mapEmbedUrl}
+        title="Mapa de Hotel La Roca del Mar en Barrio El Cocal"
+        class="h-full w-full"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>

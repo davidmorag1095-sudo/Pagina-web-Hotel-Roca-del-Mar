@@ -1,6 +1,6 @@
 # Movimientos del proyecto
 
-**Última revisión:** 29 de agosto de 2026
+**Última revisión:** 30 de agosto de 2026
 
 Esta carpeta mantiene separados del código del sitio los prompts reutilizables, las decisiones y los resúmenes de cambios realizados con Codex.
 
@@ -16,8 +16,9 @@ El procedimiento obligatorio para commits y publicaciones está definido en `FLU
 
 ## Índice actual
 
-- `2026-08-29-habitaciones-desktop.md`: sección desktop «Nuestras habitaciones» con tres opciones compactas y un lightbox independiente para fotografías reales de habitaciones.
-- `2026-08-29-integracion-fotos-habitaciones-atardecer.md`: integración de dos fotos de habitación, selección visual provisional para la habitación familiar y una nueva foto de atardecer en el lightbox.
+- `2026-08-29-ubicacion-footer-desktop.md`: sección de ubicación con mapa, CTA azul y footer azul marino con logo integrado, contactos y enlaces externos reales.
+- `2026-08-29-habitaciones-desktop.md`: sección desktop «Nuestras habitaciones» con tres opciones compactas y un lightbox independiente de seis fotografías reales.
+- `2026-08-29-integracion-fotos-habitaciones-atardecer.md`: incorporación organizada de fotografías reales de habitaciones y exteriores, incluida la actualización de una imagen conservando su ruta.
 - `2026-08-29-estancia-desktop-galeria.md`: sección de estancia desktop con un collage de tres fotografías y lightbox; el catálogo actual reúne 16 imágenes y excluye del recorrido las tres visibles.
 - `2026-08-29-hero-alineacion-desktop-sin-barra.md`: alineación horizontal del Hero y Navbar en escritorio y eliminación de la barra flotante y su espacio inferior.
 - `2026-08-29-hero-nueva-fotografia.md`: corrección de las referencias rotas del Hero e integración de la nueva fotografía, sin adaptación móvil ni cambios en el contenido.
