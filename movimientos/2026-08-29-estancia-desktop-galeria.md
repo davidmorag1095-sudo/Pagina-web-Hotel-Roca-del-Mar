@@ -66,7 +66,7 @@ Construir únicamente la sección desktop «Una estancia tranquila en Puntarenas
 - El encabezado quedó centrado y simplificado en un único título serif, «Galería del hotel», acompañado por un separador ornamental sutil que conserva el lenguaje visual del hotel.
 - Se aumentó ligeramente el título a 32 px y se reforzó su presencia con un tono crema claro y un espaciado tipográfico sutil, sin añadir subtítulos ni alterar la línea dorada decorativa.
 - La fotografía ocupa el área principal del panel y utiliza dos capas superpuestas para producir un crossfade suave de 700 ms sin destellos entre imágenes.
-- El autoplay cambia de foto cada 3 segundos, vuelve de la última a la primera y se reinicia después de usar las flechas visuales o las teclas de dirección.
+- El autoplay cambia de foto cada 4 segundos, vuelve de la última a la primera y se reinicia después de usar las flechas visuales o las teclas de dirección.
 - Se conservaron X, flechas, caption, contador, categoría, cierre con Escape, navegación por teclado y el backdrop azul semitransparente con blur ligero.
 - Las dos fotografías visibles en «Una estancia tranquila en Puntarenas» se excluyeron del recorrido del modal; permanecen disponibles como imágenes destacadas de la sección.
 
