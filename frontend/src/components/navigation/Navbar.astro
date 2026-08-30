@@ -1,5 +1,6 @@
 ---
 import hotelLogo from "../../assets/logo/logo-hotel-la-roca-del-mar.svg";
+import { contact } from "../../config/contact";
 ---
 
 <header class="absolute inset-x-0 top-0 z-50 w-full bg-[linear-gradient(90deg,#00142a_0%,#00142a_28%,rgba(0,20,42,0.82)_50%,rgba(0,20,42,0)_82%)] text-white">
@@ -31,7 +32,9 @@ import hotelLogo from "../../assets/logo/logo-hotel-la-roca-del-mar.svg";
 
     <a
       class="justify-self-end rounded-full border border-white/50 bg-[#d72f2f] px-5 py-3 text-sm font-semibold tracking-wide text-white transition-colors duration-200 hover:bg-[#bd2424] sm:px-8 lg:mr-3"
-      href="#reservar"
+      href={contact.bookingUrl}
+      target="_blank"
+      rel="noreferrer"
     >
       Reservar
     </a>
