@@ -16,6 +16,7 @@ El procedimiento obligatorio para commits y publicaciones está definido en `FLU
 
 ## Índice actual
 
+- `2026-08-30-navbar-logo-hover.md`: sustitución de la identidad textual por el logo horizontal 4K y líneas inferiores animadas en los enlaces del Navbar.
 - `2026-08-29-ubicacion-footer-desktop.md`: sección de ubicación con mapa, CTA azul y footer azul marino con logo integrado, contactos y enlaces externos reales.
 - `2026-08-29-habitaciones-desktop.md`: sección desktop «Nuestras habitaciones» con tres opciones compactas y un lightbox independiente de seis fotografías reales.
 - `2026-08-29-integracion-fotos-habitaciones-atardecer.md`: incorporación organizada de fotografías reales de habitaciones y exteriores, incluida la actualización de una imagen conservando su ruta.
