@@ -13,10 +13,10 @@ const visiblePhotos = [mainPhoto, ...stackedPhotos];
 const lightboxPhotos = galleryPhotos.filter((photo) => !visiblePhotos.includes(photo));
 ---
 
-<section id="galeria" aria-labelledby="stay-heading" class="bg-[#f7f4ee] px-[4vw] py-12 text-[#031b2a]">
-  <div class="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.65fr)] items-center gap-[3.5vw]">
-    <div class="max-w-[410px]">
-      <h2 id="stay-heading" class="font-serif text-[clamp(2.1rem,2.7vw,2.75rem)] leading-[1.08] tracking-[-0.025em]">
+<section id="galeria" aria-labelledby="stay-heading" class="bg-[#f7f4ee] px-5 py-10 text-[#031b2a] md:px-[4vw] md:py-12">
+  <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.65fr)] md:gap-[3.5vw]">
+    <div class="max-w-none md:max-w-[410px]">
+      <h2 id="stay-heading" class="font-serif text-[2.25rem] leading-[1.08] tracking-[-0.025em] md:text-[clamp(2.1rem,2.7vw,2.75rem)]">
         Una estancia tranquila en Puntarenas
       </h2>
       <div class="mt-5 space-y-3 text-[15px] leading-[1.65] text-[#475963]">
@@ -32,8 +32,8 @@ const lightboxPhotos = galleryPhotos.filter((photo) => !visiblePhotos.includes(p
       <GalleryLightbox photos={lightboxPhotos} />
     </div>
 
-    <div class="grid h-[clamp(270px,23vw,320px)] w-full max-w-[760px] grid-cols-[minmax(0,1.85fr)_minmax(0,1fr)] items-stretch justify-self-end gap-3">
-      <figure class="h-full overflow-hidden rounded-xl">
+    <div class="grid h-auto w-full grid-cols-2 grid-rows-[clamp(190px,62vw,260px)_clamp(105px,34vw,150px)] items-stretch gap-2 md:h-[clamp(270px,23vw,320px)] md:max-w-[760px] md:grid-cols-[minmax(0,1.85fr)_minmax(0,1fr)] md:grid-rows-1 md:justify-self-end md:gap-3">
+      <figure class="col-span-2 h-full overflow-hidden rounded-xl md:col-span-1">
         <Image
           src={mainPhoto.image}
           alt={mainPhoto.alt}
@@ -45,7 +45,7 @@ const lightboxPhotos = galleryPhotos.filter((photo) => !visiblePhotos.includes(p
         />
       </figure>
 
-      <div class="grid min-h-0 grid-rows-2 gap-3">
+      <div class="col-span-2 grid min-h-0 grid-cols-2 grid-rows-1 gap-2 md:col-span-1 md:grid-cols-1 md:grid-rows-2 md:gap-3">
         {stackedPhotos.map((photo) => (
           <figure class="min-h-0 overflow-hidden rounded-xl">
             <Image

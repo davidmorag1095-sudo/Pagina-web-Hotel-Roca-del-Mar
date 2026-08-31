@@ -4,9 +4,9 @@ import { contact } from "../../config/contact";
 ---
 
 <section class="relative isolate bg-[#f7f4ee]">
-  <div class="relative min-h-[54rem] w-full overflow-hidden bg-[#031b2a] md:h-[clamp(40.5rem,76svh,47rem)] md:min-h-0">
+  <div class="relative min-h-[48rem] w-full overflow-hidden bg-[#031b2a] md:h-[clamp(40.5rem,76svh,47rem)] md:min-h-0">
     <img
-      class="absolute inset-0 block h-full w-full object-cover object-center"
+      class="absolute inset-0 block h-full w-full object-cover object-[52%_center] md:object-center"
       src={heroImage.src}
       alt=""
       width={heroImage.width}
@@ -19,28 +19,28 @@ import { contact } from "../../config/contact";
     <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,22,34,0.94)_0%,rgba(2,22,34,0.84)_23%,rgba(2,22,34,0.48)_45%,rgba(2,22,34,0.12)_68%,rgba(2,22,34,0)_84%)]" aria-hidden="true"></div>
     <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.18)_0%,rgba(0,0,0,0)_34%,rgba(0,0,0,0.16)_100%)]" aria-hidden="true"></div>
 
-    <div class="relative z-10 mx-auto w-full max-w-[1536px] px-6 pt-36 sm:px-8 md:pt-[9.75rem] lg:max-w-none lg:px-[4vw]">
+    <div class="relative z-10 mx-auto w-full max-w-[1536px] px-5 pt-28 sm:px-8 md:pt-[9.75rem] lg:max-w-none lg:px-[4vw]">
       <div class="w-full max-w-[760px]">
-        <h1 class="max-w-[600px] font-serif text-[clamp(4rem,6vw,5.55rem)] leading-[0.9] font-normal tracking-[-0.025em] text-white">Hotel La Roca<br />del Mar</h1>
-        <p class="mt-4 font-serif text-[clamp(1.65rem,2.1vw,2rem)] leading-tight text-[#d6ad68]">Puntarenas, Costa Rica</p>
-        <p class="mt-3 max-w-[440px] font-serif text-lg leading-relaxed text-white/95 md:text-xl">Disfruta Puntarenas desde un espacio cómodo, relajado y cerca del Pacífico.</p>
+        <h1 class="max-w-[350px] font-serif text-[clamp(3.15rem,14vw,3.5rem)] leading-[0.92] font-normal tracking-[-0.025em] text-white md:max-w-[600px] md:text-[clamp(4rem,6vw,5.55rem)] md:leading-[0.9]">Hotel La Roca<br />del Mar</h1>
+        <p class="mt-3 font-serif text-[clamp(1.4rem,6.8vw,1.75rem)] leading-tight text-[#d6ad68] md:mt-4 md:text-[clamp(1.65rem,2.1vw,2rem)]">Puntarenas, Costa Rica</p>
+        <p class="mt-3 max-w-[390px] font-serif text-base leading-relaxed text-white/95 md:max-w-[440px] md:text-xl">Disfruta Puntarenas desde un espacio cómodo, relajado y cerca del Pacífico.</p>
 
-        <div id="reservar" class="mt-5 flex flex-col gap-4 sm:flex-row">
-          <a class="inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-[#d72f2f] px-7 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#bd2424]" href={contact.bookingUrl} target="_blank" rel="noreferrer">
+        <div id="reservar" class="mt-5 flex flex-col gap-3 md:flex-row md:gap-4">
+          <a class="inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-[#d72f2f] px-6 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#bd2424] md:w-auto md:px-7" href={contact.bookingUrl} target="_blank" rel="noreferrer">
             <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path stroke-linecap="round" d="M7 3v4M17 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 17.5h.01M12 17.5h.01"></path></svg>
             Reservar en Booking
           </a>
-          <a class="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border border-white/80 bg-transparent px-7 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/10" href={contact.whatsappUrl} target="_blank" rel="noreferrer">
+          <a class="inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full border border-white/80 bg-transparent px-6 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/10 md:w-auto md:px-7" href={contact.whatsappUrl} target="_blank" rel="noreferrer">
             <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.2-4.2A8.5 8.5 0 1 1 20.5 11.5Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 8.2c.4 3.2 2.1 5 5.3 5.8l1.4-1.3 2 .9c-.2 1.5-1.2 2.4-2.8 2.5-4.5-.4-7.2-3-7.7-7.5.1-1.5 1-2.5 2.4-2.7l.9 2-1.5 1.3Z"></path></svg>
             Consultar por WhatsApp
           </a>
         </div>
 
-        <ul class="mt-6 grid max-w-[740px] grid-cols-2 gap-x-4 gap-y-4 text-xs leading-snug text-white/95 sm:flex sm:flex-wrap sm:items-center sm:gap-x-7 sm:text-sm">
-          <li class="flex items-center gap-2.5 sm:whitespace-nowrap"><svg class="size-6 shrink-0 text-[#d6ad68]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path stroke-linecap="round" d="M3 15c2-1.8 4-1.8 6 0s4 1.8 6 0 4-1.8 6 0M4 19c1.7-1.3 3.3-1.3 5 0s3.3 1.3 5 0 3.3-1.3 5 0M7 11a5 5 0 0 1 10 0"></path></svg>Cerca del mar</li>
-          <li class="flex items-center gap-2.5 sm:whitespace-nowrap"><svg class="size-6 shrink-0 text-[#d6ad68]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path stroke-linecap="round" d="M3 14h18v6H3zM7 14V8m10 6V5M7 8h4c1.7 0 3 1.3 3 3v3M2 10c1.5-1.3 3-1.3 4.5 0s3 1.3 4.5 0 3-1.3 4.5 0 3 1.3 4.5 0"></path></svg>Piscina al aire libre</li>
-          <li class="flex items-center gap-2.5 sm:whitespace-nowrap"><svg class="size-6 shrink-0 text-[#d6ad68]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m5 16 1-6h12l1 6M4 16h16v4h-2v-2H6v2H4v-4Z"></path><path stroke-linecap="round" d="m8 10 1-3h6l1 3M7 14h.01M17 14h.01"></path></svg>Estacionamiento gratuito</li>
-          <li class="flex items-center gap-2.5 sm:whitespace-nowrap"><svg class="size-6 shrink-0 text-[#d6ad68]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="9" cy="7" r="3"></circle><circle cx="17" cy="9" r="2.5"></circle><path stroke-linecap="round" d="M3 20v-2a6 6 0 0 1 12 0v2M15 14a5 5 0 0 1 6 4.9V20"></path></svg>Atención directa</li>
+        <ul class="mt-6 grid max-w-[740px] grid-cols-2 gap-x-3 gap-y-4 text-xs leading-snug text-white/95 sm:flex sm:flex-wrap sm:items-center sm:gap-x-7 sm:text-sm">
+          <li class="flex items-center gap-2 sm:gap-2.5 sm:whitespace-nowrap"><svg class="size-5 shrink-0 text-[#d6ad68] sm:size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path stroke-linecap="round" d="M3 15c2-1.8 4-1.8 6 0s4 1.8 6 0 4-1.8 6 0M4 19c1.7-1.3 3.3-1.3 5 0s3.3 1.3 5 0 3.3-1.3 5 0M7 11a5 5 0 0 1 10 0"></path></svg>Cerca del mar</li>
+          <li class="flex items-center gap-2 sm:gap-2.5 sm:whitespace-nowrap"><svg class="size-5 shrink-0 text-[#d6ad68] sm:size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path stroke-linecap="round" d="M3 14h18v6H3zM7 14V8m10 6V5M7 8h4c1.7 0 3 1.3 3 3v3M2 10c1.5-1.3 3-1.3 4.5 0s3 1.3 4.5 0 3-1.3 4.5 0 3 1.3 4.5 0"></path></svg>Piscina al aire libre</li>
+          <li class="flex items-center gap-2 sm:gap-2.5 sm:whitespace-nowrap"><svg class="size-5 shrink-0 text-[#d6ad68] sm:size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m5 16 1-6h12l1 6M4 16h16v4h-2v-2H6v2H4v-4Z"></path><path stroke-linecap="round" d="m8 10 1-3h6l1 3M7 14h.01M17 14h.01"></path></svg>Estacionamiento gratuito</li>
+          <li class="flex items-center gap-2 sm:gap-2.5 sm:whitespace-nowrap"><svg class="size-5 shrink-0 text-[#d6ad68] sm:size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="9" cy="7" r="3"></circle><circle cx="17" cy="9" r="2.5"></circle><path stroke-linecap="round" d="M3 20v-2a6 6 0 0 1 12 0v2M15 14a5 5 0 0 1 6 4.9V20"></path></svg>Atención directa</li>
         </ul>
       </div>
     </div>

@@ -3,41 +3,41 @@ import hotelLogo from "../../assets/logo/logo-hotel-la-roca-del-mar.svg";
 import { contact } from "../../config/contact";
 ---
 
-<footer id="contacto" class="bg-[#031b2a] px-[4vw] text-white">
-  <div class="mx-auto grid max-w-[1240px] gap-7 py-5 md:grid-cols-2 lg:grid-cols-[1.35fr_repeat(5,minmax(0,1fr))] lg:items-center lg:gap-5">
-    <div class="md:col-span-2 lg:col-span-1">
+<footer id="contacto" class="bg-[#031b2a] px-5 text-white md:px-[4vw]">
+  <div class="mx-auto grid max-w-[1240px] grid-cols-1 gap-5 py-8 min-[480px]:grid-cols-2 md:gap-7 md:py-5 lg:grid-cols-[1.35fr_repeat(5,minmax(0,1fr))] lg:items-center lg:gap-5">
+    <div class="justify-self-center min-[480px]:col-span-2 md:col-span-2 lg:col-span-1 lg:justify-self-start">
       <a href="/" aria-label="Hotel La Roca del Mar, página de inicio" class="relative inline-block w-[230px] max-w-full drop-shadow-[0_3px_8px_rgba(0,0,0,0.24)]">
         <img src={hotelLogo.src} alt="Hotel La Roca del Mar" width="230" height="77" loading="lazy" decoding="async" class="block h-auto w-full" />
       </a>
     </div>
 
-    <a class="group flex items-center gap-3" href={contact.whatsappUrl} target="_blank" rel="noreferrer">
+    <a class="group flex min-h-12 min-w-0 items-center gap-3 rounded-xl px-1 py-1 md:min-h-0 md:rounded-none md:px-0 md:py-0" href={contact.whatsappUrl} target="_blank" rel="noreferrer">
       <span class="grid size-9 shrink-0 place-items-center rounded-full border border-white/45 text-white"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.2-4.2A8.5 8.5 0 1 1 20.5 11.5Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 8.2c.4 3.2 2.1 5 5.3 5.8l1.4-1.3 2 .9c-.2 1.5-1.2 2.4-2.8 2.5-4.5-.4-7.2-3-7.7-7.5.1-1.5 1-2.5 2.4-2.7l.9 2-1.5 1.3Z" /></svg></span>
       <span><span class="block text-sm font-semibold group-hover:text-[#e1bd7d]">WhatsApp</span><span class="block text-[11px] text-white/65">{contact.whatsappDisplay}</span></span>
     </a>
 
-    <a class="group flex items-center gap-3" href={contact.emailUrl}>
+    <a class="group flex min-h-12 min-w-0 items-center gap-3 rounded-xl px-1 py-1 md:min-h-0 md:rounded-none md:px-0 md:py-0" href={contact.emailUrl}>
       <span class="grid size-9 shrink-0 place-items-center rounded-lg border border-white/45 text-white"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path stroke-linecap="round" stroke-linejoin="round" d="m4 7 8 6 8-6" /></svg></span>
       <span><span class="block text-sm font-semibold group-hover:text-[#e1bd7d]">Correo electrónico</span><span class="block text-[11px] text-white/65">{contact.email}</span></span>
     </a>
 
-    <a class="group flex items-center gap-3" href={contact.bookingUrl} target="_blank" rel="noreferrer">
+    <a class="group flex min-h-12 min-w-0 items-center gap-3 rounded-xl px-1 py-1 md:min-h-0 md:rounded-none md:px-0 md:py-0" href={contact.bookingUrl} target="_blank" rel="noreferrer">
       <span class="grid size-9 shrink-0 place-items-center rounded-lg border border-white/45 font-serif text-base font-semibold text-white">B.</span>
       <span><span class="block text-sm font-semibold group-hover:text-[#e1bd7d]">Booking</span><span class="block text-[11px] text-white/65">Ver disponibilidad</span></span>
     </a>
 
-    <a class="group flex items-center gap-3" href={contact.facebookUrl} target="_blank" rel="noreferrer">
+    <a class="group flex min-h-12 min-w-0 items-center gap-3 rounded-xl px-1 py-1 md:min-h-0 md:rounded-none md:px-0 md:py-0" href={contact.facebookUrl} target="_blank" rel="noreferrer">
       <span class="grid size-9 shrink-0 place-items-center rounded-full border border-white/45 font-serif text-lg font-semibold text-white">f</span>
       <span><span class="block text-sm font-semibold group-hover:text-[#e1bd7d]">Facebook</span><span class="block text-[11px] text-white/65">Hotel La Roca del Mar</span></span>
     </a>
 
-    <a class="group flex items-center gap-3" href={contact.instagramUrl} target="_blank" rel="noreferrer">
+    <a class="group flex min-h-12 min-w-0 items-center gap-3 rounded-xl px-1 py-1 md:min-h-0 md:rounded-none md:px-0 md:py-0" href={contact.instagramUrl} target="_blank" rel="noreferrer">
       <span class="grid size-9 shrink-0 place-items-center rounded-lg border border-white/45 text-white"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" /></svg></span>
       <span><span class="block text-sm font-semibold group-hover:text-[#e1bd7d]">Instagram</span><span class="block text-[11px] text-white/65">@larocadelmar</span></span>
     </a>
   </div>
 
-  <div class="mx-auto flex max-w-[1240px] flex-col gap-2 border-t border-white/10 py-3 text-[11px] text-white/45 sm:flex-row sm:items-center sm:justify-between">
+  <div class="mx-auto flex max-w-[1240px] flex-col items-center gap-2 border-t border-white/10 py-4 text-center text-[11px] text-white/45 sm:flex-row sm:justify-between sm:py-3 sm:text-left">
     <span>© Hotel La Roca del Mar</span>
     <span>Barrio El Cocal · Puntarenas, Costa Rica</span>
   </div>

@@ -3,9 +3,9 @@ import hotelLogo from "../../assets/logo/logo-hotel-la-roca-del-mar.svg";
 import { contact } from "../../config/contact";
 ---
 
-<header class="absolute inset-x-0 top-0 z-50 w-full bg-[linear-gradient(90deg,#00142a_0%,#00142a_28%,rgba(0,20,42,0.82)_50%,rgba(0,20,42,0)_82%)] text-white">
+<header class="absolute inset-x-0 top-0 z-50 w-full bg-[#00142a]/95 text-white md:bg-[linear-gradient(90deg,#00142a_0%,#00142a_28%,rgba(0,20,42,0.82)_50%,rgba(0,20,42,0)_82%)]">
   <nav
-    class="mx-auto grid h-[104px] w-full max-w-[1536px] grid-cols-[1fr_auto] items-center px-5 sm:px-8 md:grid-cols-[1fr_auto_1fr] lg:max-w-none lg:px-[4vw]"
+    class="mx-auto grid h-[82px] w-full max-w-[1536px] grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-2 px-4 sm:px-6 md:h-[104px] md:grid-cols-[1fr_auto_1fr] md:gap-0 md:px-8 lg:max-w-none lg:px-[4vw]"
     aria-label="Navegación principal"
   >
     <a
@@ -14,7 +14,7 @@ import { contact } from "../../config/contact";
       aria-label="Hotel La Roca del Mar, página de inicio"
     >
       <img
-        class="h-auto w-[180px] sm:w-[210px] lg:w-[270px]"
+        class="h-auto w-[122px] min-[360px]:w-[145px] sm:w-[180px] md:w-[210px] lg:w-[270px]"
         src={hotelLogo.src}
         alt="Hotel La Roca del Mar — Playa, Mar y Sol"
         width={540}
@@ -31,12 +31,56 @@ import { contact } from "../../config/contact";
     </ul>
 
     <a
-      class="justify-self-end rounded-full border border-white/50 bg-[#d72f2f] px-5 py-3 text-sm font-semibold tracking-wide text-white transition-colors duration-200 hover:bg-[#bd2424] sm:px-8 lg:mr-3"
+      class="justify-self-end rounded-full border border-white/50 bg-[#d72f2f] px-3 py-2.5 text-xs font-semibold tracking-wide text-white transition-colors duration-200 hover:bg-[#bd2424] min-[360px]:px-4 md:px-8 md:py-3 md:text-sm lg:mr-3"
       href={contact.bookingUrl}
       target="_blank"
       rel="noreferrer"
     >
       Reservar
     </a>
+
+    <details data-mobile-menu class="group relative justify-self-end md:hidden">
+      <summary
+        class="grid size-11 cursor-pointer list-none place-items-center rounded-full border border-white/45 bg-[#00142a]/75 text-white transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white [&::-webkit-details-marker]:hidden"
+        aria-label="Abrir menú de navegación"
+      >
+        <svg class="size-5 group-open:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+        <svg class="hidden size-5 group-open:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <path stroke-linecap="round" d="m6 6 12 12M18 6 6 18" />
+        </svg>
+      </summary>
+
+      <div class="absolute right-0 top-[calc(100%+0.65rem)] w-[min(14rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-white/15 bg-[#031b2a]/98 p-2 shadow-[0_18px_45px_rgba(0,0,0,0.3)]">
+        <ul class="grid gap-1 text-sm font-semibold">
+          <li><a class="block min-h-11 rounded-xl px-4 py-3 transition-colors hover:bg-white/10 focus-visible:bg-white/10 focus-visible:outline-none" href="/" aria-current="page">Inicio</a></li>
+          <li><a class="block min-h-11 rounded-xl px-4 py-3 transition-colors hover:bg-white/10 focus-visible:bg-white/10 focus-visible:outline-none" href="#galeria">Galería</a></li>
+          <li><a class="block min-h-11 rounded-xl px-4 py-3 transition-colors hover:bg-white/10 focus-visible:bg-white/10 focus-visible:outline-none" href="#ubicacion">Ubicación</a></li>
+          <li><a class="block min-h-11 rounded-xl px-4 py-3 transition-colors hover:bg-white/10 focus-visible:bg-white/10 focus-visible:outline-none" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </details>
   </nav>
 </header>
+
+<script>
+  const mobileMenu = document.querySelector<HTMLDetailsElement>("[data-mobile-menu]");
+
+  if (mobileMenu) {
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => mobileMenu.removeAttribute("open"));
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!mobileMenu.contains(event.target as Node)) mobileMenu.removeAttribute("open");
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        mobileMenu.removeAttribute("open");
+        mobileMenu.querySelector("summary")?.focus();
+      }
+    });
+  }
+</script>

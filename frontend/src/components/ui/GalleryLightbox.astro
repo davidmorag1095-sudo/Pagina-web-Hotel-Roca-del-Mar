@@ -44,37 +44,37 @@ const slides = await Promise.all(photos.map(async (photo) => {
   <dialog
     id={dialogId}
     aria-labelledby={titleId}
-    class="fixed inset-0 m-auto h-[min(88vh,820px)] max-h-none w-[min(88vw,1220px)] max-w-none overflow-hidden rounded-2xl border border-[#d6ad68]/45 bg-[linear-gradient(145deg,#031b2a_0%,#062638_100%)] p-0 text-white shadow-[0_28px_90px_rgba(2,14,24,0.45)] backdrop:bg-[#031b2a]/50 backdrop:backdrop-blur-[2px]"
+    class="fixed inset-0 m-auto h-[calc(100dvh-1rem)] max-h-none w-[calc(100vw-1rem)] max-w-none overflow-hidden rounded-xl border border-[#d6ad68]/45 bg-[linear-gradient(145deg,#031b2a_0%,#062638_100%)] p-0 text-white shadow-[0_28px_90px_rgba(2,14,24,0.45)] backdrop:bg-[#031b2a]/50 backdrop:backdrop-blur-[2px] md:h-[min(88vh,820px)] md:w-[min(88vw,1220px)] md:rounded-2xl"
   >
     <div class="flex h-full flex-col">
-      <header class="relative shrink-0 px-20 pb-3 pt-5 text-center">
-        <h2 id={titleId} class="font-serif text-[32px] leading-tight tracking-[-0.01em] text-[#f7f4ee]">{title}</h2>
-        <div aria-hidden="true" class="mx-auto mt-3 flex max-w-72 items-center justify-center gap-2 text-[#d6ad68]/70">
+      <header class="relative shrink-0 px-14 pb-2 pt-4 text-center md:px-20 md:pb-3 md:pt-5">
+        <h2 id={titleId} class="font-serif text-2xl leading-tight tracking-[-0.01em] text-[#f7f4ee] md:text-[32px]">{title}</h2>
+        <div aria-hidden="true" class="mx-auto mt-2 flex max-w-48 items-center justify-center gap-2 text-[#d6ad68]/70 md:mt-3 md:max-w-72">
           <span class="h-px flex-1 bg-current"></span>
           <span class="size-1.5 rotate-45 border border-current"></span>
           <span class="h-px flex-1 bg-current"></span>
         </div>
-        <button type="button" data-gallery-close autofocus aria-label={closeLabel} class="absolute right-5 top-5 grid size-12 cursor-pointer place-items-center rounded-full border border-[#d6ad68]/55 text-[#e1bd7d] transition-colors hover:bg-[#d6ad68]/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d6ad68]">
+        <button type="button" data-gallery-close autofocus aria-label={closeLabel} class="absolute right-3 top-3 grid size-11 cursor-pointer place-items-center rounded-full border border-[#d6ad68]/55 text-[#e1bd7d] transition-colors hover:bg-[#d6ad68]/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d6ad68] md:right-5 md:top-5 md:size-12">
           <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" d="m6 6 12 12M18 6 6 18" /></svg>
         </button>
       </header>
 
-      <div class="grid min-h-0 flex-1 grid-cols-[3rem_minmax(0,1fr)_3rem] items-center gap-5 px-6 pb-1">
-        <button type="button" data-gallery-previous aria-label="Foto anterior" class="grid size-12 cursor-pointer place-items-center rounded-full border border-[#d6ad68]/55 text-2xl text-[#e1bd7d] transition-colors hover:bg-[#d6ad68]/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d6ad68]">
+      <div class="relative grid min-h-0 flex-1 grid-cols-1 items-center px-2 pb-1 md:grid-cols-[3rem_minmax(0,1fr)_3rem] md:gap-5 md:px-6">
+        <button type="button" data-gallery-previous aria-label="Foto anterior" class="absolute left-3 top-1/2 z-10 grid size-11 -translate-y-1/2 cursor-pointer place-items-center rounded-full border border-[#d6ad68]/55 bg-[#031b2a]/80 text-2xl text-[#e1bd7d] transition-colors hover:bg-[#0a3448] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d6ad68] md:static md:size-12 md:translate-y-0 md:bg-transparent md:hover:bg-[#d6ad68]/10">
           <span aria-hidden="true">←</span>
         </button>
-        <figure class="relative h-full min-h-0 overflow-hidden rounded-xl border border-white/10 bg-black/10 shadow-[0_18px_45px_rgba(0,0,0,0.2)]">
+        <figure class="relative h-full min-h-0 overflow-hidden rounded-lg border border-white/10 bg-black/10 shadow-[0_18px_45px_rgba(0,0,0,0.2)] md:rounded-xl">
           <img data-gallery-image alt="" decoding="async" class="absolute inset-0 h-full w-full object-contain opacity-0 transition-opacity duration-700 ease-out" />
           <img data-gallery-image alt="" decoding="async" class="absolute inset-0 h-full w-full object-contain opacity-0 transition-opacity duration-700 ease-out" />
           <p data-gallery-status role="status" class="pointer-events-none absolute inset-x-4 top-1/2 text-center text-sm text-white/80"></p>
         </figure>
-        <button type="button" data-gallery-next aria-label="Foto siguiente" class="grid size-12 cursor-pointer place-items-center rounded-full border border-[#d6ad68]/55 text-2xl text-[#e1bd7d] transition-colors hover:bg-[#d6ad68]/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d6ad68]">
+        <button type="button" data-gallery-next aria-label="Foto siguiente" class="absolute right-3 top-1/2 z-10 grid size-11 -translate-y-1/2 cursor-pointer place-items-center rounded-full border border-[#d6ad68]/55 bg-[#031b2a]/80 text-2xl text-[#e1bd7d] transition-colors hover:bg-[#0a3448] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d6ad68] md:static md:size-12 md:translate-y-0 md:bg-transparent md:hover:bg-[#d6ad68]/10">
           <span aria-hidden="true">→</span>
         </button>
       </div>
 
-      <div aria-live="polite" aria-atomic="true" class="shrink-0 px-6 pb-5 pt-4 text-center">
-        <p data-gallery-caption class="font-serif text-xl leading-tight"></p>
+      <div aria-live="polite" aria-atomic="true" class="shrink-0 px-3 pb-4 pt-3 text-center md:px-6 md:pb-5 md:pt-4">
+        <p data-gallery-caption class="font-serif text-base leading-tight md:text-xl"></p>
         <div aria-hidden="true" class="mx-auto mt-2 flex w-24 items-center gap-2 text-[#d6ad68]/65">
           <span class="h-px flex-1 bg-current"></span>
           <span class="size-1 rotate-45 border border-current"></span>

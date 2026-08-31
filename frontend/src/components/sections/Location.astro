@@ -2,11 +2,11 @@
 import { contact } from "../../config/contact";
 ---
 
-<section id="ubicacion" aria-labelledby="location-heading" class="bg-[#f7f4ee] px-[4vw] py-9 text-[#031b2a]">
-  <div class="mx-auto grid max-w-[1240px] items-center gap-8 lg:grid-cols-[minmax(250px,0.68fr)_minmax(0,1.72fr)] lg:gap-10">
+<section id="ubicacion" aria-labelledby="location-heading" class="bg-[#f7f4ee] px-5 py-10 text-[#031b2a] md:px-[4vw] md:py-9">
+  <div class="mx-auto grid max-w-[1240px] items-center gap-7 lg:grid-cols-[minmax(250px,0.68fr)_minmax(0,1.72fr)] lg:gap-10">
     <div>
       <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#c79042]">Ubicación</p>
-      <h2 id="location-heading" class="mt-1.5 max-w-[330px] font-serif text-[clamp(2rem,2.7vw,2.7rem)] leading-[1.02] tracking-[-0.025em]">
+      <h2 id="location-heading" class="mt-1.5 max-w-[330px] font-serif text-[2.15rem] leading-[1.02] tracking-[-0.025em] md:text-[clamp(2rem,2.7vw,2.7rem)]">
         Encuéntranos en Barrio El Cocal
       </h2>
       <div aria-hidden="true" class="mt-3 h-0.5 w-16 bg-[#c79042]"></div>
@@ -22,7 +22,7 @@ import { contact } from "../../config/contact";
         href={contact.directionsUrl}
         target="_blank"
         rel="noreferrer"
-        class="mt-4 inline-flex min-h-10 items-center justify-center gap-2.5 rounded-full bg-[#082b42] px-6 text-sm font-semibold text-white shadow-[0_8px_18px_rgba(3,27,42,0.16)] transition-colors hover:bg-[#0b3b59] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#082b42]"
+        class="mt-4 inline-flex min-h-12 w-full items-center justify-center gap-2.5 rounded-full bg-[#082b42] px-6 text-sm font-semibold text-white shadow-[0_8px_18px_rgba(3,27,42,0.16)] transition-colors hover:bg-[#0b3b59] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#082b42] sm:w-auto md:min-h-10"
       >
         <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12Z" />
@@ -32,7 +32,7 @@ import { contact } from "../../config/contact";
       </a>
     </div>
 
-    <div class="h-[280px] overflow-hidden rounded-2xl border border-[#031b2a]/10 bg-[#e5ded3] shadow-[0_14px_36px_rgba(3,27,42,0.1)]">
+    <div class="h-[260px] w-full overflow-hidden rounded-2xl border border-[#031b2a]/10 bg-[#e5ded3] shadow-[0_14px_36px_rgba(3,27,42,0.1)] md:h-[280px]">
       <iframe
         src={contact.mapEmbedUrl}
         title="Mapa de Hotel La Roca del Mar en Barrio El Cocal"
