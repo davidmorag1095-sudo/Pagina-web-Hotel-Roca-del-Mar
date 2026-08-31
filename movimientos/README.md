@@ -1,6 +1,6 @@
 # Movimientos del proyecto
 
-**Última revisión:** 30 de agosto de 2026
+**Última revisión:** 31 de agosto de 2026
 
 Esta carpeta mantiene separados del código del sitio los prompts reutilizables, las decisiones y los resúmenes de cambios realizados con Codex.
 
@@ -16,6 +16,7 @@ El procedimiento obligatorio para commits y publicaciones está definido en `FLU
 
 ## Índice actual
 
+- `2026-08-31-titulo-presentacion-hotel.md`: actualización del título compartido de la sección de presentación a «Conoce La Roca del Mar», sin cambios en su composición ni contenido restante.
 - `2026-08-30-responsive-mobile-tablet.md`: adaptación responsive de toda la página sobre los componentes existentes, con menú móvil, layouts verticales, lightboxes táctiles y validación en teléfono y tablet.
 - `2026-08-30-logo-vectorial-svg.md`: conversión del logo horizontal a SVG con trazados reales e integración en Navbar y Footer sin cambiar sus dimensiones visuales.
 - `2026-08-30-navbar-logo-hover.md`: sustitución de la identidad textual por el logo horizontal 4K y líneas inferiores animadas en los enlaces del Navbar.
