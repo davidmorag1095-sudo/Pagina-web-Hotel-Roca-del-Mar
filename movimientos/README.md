@@ -16,6 +16,7 @@ El procedimiento obligatorio para commits y publicaciones está definido en `FLU
 
 ## Índice actual
 
+- `2026-09-03-landmark-main-semantica-direccion.md`: incorporación de un único landmark `<main>` y marcado semántico de la dirección física sin cambios visuales.
 - `2026-09-03-optimizacion-logo-svg.md`: reducción conservadora del peso y la complejidad del logo vectorial, manteniendo colores, proporciones, transparencia y apariencia en Navbar y Footer.
 - `2026-09-03-optimizacion-imagen-hero.md`: optimización responsive de la fotografía actual del Hero mediante Astro, con variantes WebP y JPEG sin alterar su diseño ni encuadre.
 - `2026-09-01-refinamiento-informacion-habitaciones.md`: mejora de la jerarquía y presentación de la configuración y el uso recomendado en la base de las tres tarjetas de habitaciones.
