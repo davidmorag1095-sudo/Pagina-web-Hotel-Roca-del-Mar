@@ -1,6 +1,6 @@
 # Movimientos del proyecto
 
-**Última revisión:** 1 de septiembre de 2026
+**Última revisión:** 3 de septiembre de 2026
 
 Esta carpeta mantiene separados del código del sitio los prompts reutilizables, las decisiones y los resúmenes de cambios realizados con Codex.
 
@@ -16,6 +16,7 @@ El procedimiento obligatorio para commits y publicaciones está definido en `FLU
 
 ## Índice actual
 
+- `2026-09-03-optimizacion-imagen-hero.md`: optimización responsive de la fotografía actual del Hero mediante Astro, con variantes WebP y JPEG sin alterar su diseño ni encuadre.
 - `2026-09-01-refinamiento-informacion-habitaciones.md`: mejora de la jerarquía y presentación de la configuración y el uso recomendado en la base de las tres tarjetas de habitaciones.
 - `2026-08-31-titulo-presentacion-hotel.md`: actualización del título compartido de la sección de presentación a «Conoce La Roca del Mar», sin cambios en su composición ni contenido restante.
 - `2026-08-30-responsive-mobile-tablet.md`: adaptación responsive de toda la página sobre los componentes existentes, con menú móvil, layouts verticales, lightboxes táctiles y validación en teléfono y tablet.

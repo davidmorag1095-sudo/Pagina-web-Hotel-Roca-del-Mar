@@ -1,19 +1,26 @@
 ---
+import { Picture } from "astro:assets";
 import heroImage from "../../assets/images/hero/Foto piscina con hotel de fondo soleado V2.png";
 import { contact } from "../../config/contact";
+
+const heroWidths = [480, 640, 768, 960, 1280, 1448];
 ---
 
 <section class="relative isolate bg-[#f7f4ee]">
   <div class="relative min-h-[48rem] w-full overflow-hidden bg-[#031b2a] md:h-[clamp(40.5rem,76svh,47rem)] md:min-h-0">
-    <img
-      class="absolute inset-0 block h-full w-full object-cover object-[52%_center] md:object-center"
-      src={heroImage.src}
+    <Picture
+      src={heroImage}
       alt=""
-      width={heroImage.width}
-      height={heroImage.height}
+      widths={heroWidths}
+      sizes="100vw"
+      formats={["webp"]}
+      fallbackFormat="jpg"
+      quality={82}
       loading="eager"
       decoding="async"
       fetchpriority="high"
+      pictureAttributes={{ class: "absolute inset-0 block h-full w-full" }}
+      class="block h-full w-full object-cover object-[52%_center] md:object-center"
     />
 
     <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,22,34,0.94)_0%,rgba(2,22,34,0.84)_23%,rgba(2,22,34,0.48)_45%,rgba(2,22,34,0.12)_68%,rgba(2,22,34,0)_84%)]" aria-hidden="true"></div>
