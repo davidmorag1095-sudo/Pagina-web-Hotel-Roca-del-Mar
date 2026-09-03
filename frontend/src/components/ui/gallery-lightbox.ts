@@ -31,8 +31,79 @@ class HotelGallery extends HTMLElement {
     let current = 0;
     let savedOverflow: string | undefined;
     let autoplayTimer: number | undefined;
+    let loadingStatusTimer: number | undefined;
     let activeImageIndex = 0;
     let renderToken = 0;
+    let requested = 0;
+    const preloadedImages = new Map<number, Promise<HTMLImageElement>>();
+
+    const normalizeIndex = (index: number) => (index + slides.length) % slides.length;
+
+    const waitUntilReady = async (image: HTMLImageElement) => {
+      if (!image.complete) {
+        await new Promise<void>((resolve, reject) => {
+          const cleanup = () => {
+            image.removeEventListener("load", handleLoad);
+            image.removeEventListener("error", handleError);
+          };
+          const handleLoad = () => {
+            cleanup();
+            resolve();
+          };
+          const handleError = () => {
+            cleanup();
+            reject(new Error("No se pudo cargar la fotografía."));
+          };
+
+          image.addEventListener("load", handleLoad, { once: true });
+          image.addEventListener("error", handleError, { once: true });
+        });
+      }
+
+      if (image.naturalWidth === 0) throw new Error("No se pudo cargar la fotografía.");
+
+      try {
+        await image.decode();
+      } catch {
+        if (!image.complete || image.naturalWidth === 0) throw new Error("No se pudo decodificar la fotografía.");
+      }
+
+      return image;
+    };
+
+    const preload = (index: number) => {
+      const normalized = normalizeIndex(index);
+      const cached = preloadedImages.get(normalized);
+      if (cached) return cached;
+
+      const image = new Image();
+      image.decoding = "async";
+      image.src = slides[normalized].src;
+      const pending = waitUntilReady(image).catch((error) => {
+        if (preloadedImages.get(normalized) === pending) preloadedImages.delete(normalized);
+        throw error;
+      });
+      preloadedImages.set(normalized, pending);
+      return pending;
+    };
+
+    const preloadAdjacent = (index: number) => {
+      if (slides.length < 2) return;
+      const normalized = normalizeIndex(index);
+      const adjacent = new Set([normalizeIndex(normalized - 1), normalizeIndex(normalized + 1)]);
+      adjacent.delete(normalized);
+      adjacent.forEach((adjacentIndex) => {
+        void preload(adjacentIndex).catch(() => undefined);
+      });
+    };
+
+    const clearLoadingStatus = () => {
+      if (loadingStatusTimer !== undefined) {
+        window.clearTimeout(loadingStatusTimer);
+        loadingStatusTimer = undefined;
+      }
+      status.textContent = "";
+    };
 
     const restoreScroll = () => {
       if (savedOverflow !== undefined) {
@@ -41,38 +112,50 @@ class HotelGallery extends HTMLElement {
       }
     };
 
-    const show = (index: number) => {
-      current = (index + slides.length) % slides.length;
-      const slide = slides[current];
+    const show = async (index: number) => {
+      const target = normalizeIndex(index);
+      requested = target;
+      const slide = slides[target];
       const token = ++renderToken;
       const incomingIndex = activeImageIndex === 0 ? 1 : 0;
       const incoming = images[incomingIndex];
       const outgoing = images[activeImageIndex];
 
-      status.textContent = "Cargando foto…";
+      clearLoadingStatus();
+      loadingStatusTimer = window.setTimeout(() => {
+        if (token === renderToken) status.textContent = "Cargando foto…";
+      }, 900);
       incoming.style.opacity = "0";
-      incoming.alt = slide.alt;
-      caption.textContent = slide.caption;
-      counter.textContent = `${current + 1} / ${slides.length} · ${slide.category}`;
+      incoming.alt = "";
 
-      const reveal = () => {
-        if (token !== renderToken) return;
+      try {
+        await preload(target);
+        if (token !== renderToken) return false;
+
+        incoming.src = slide.src;
+        await waitUntilReady(incoming);
+        if (token !== renderToken) return false;
+
+        clearLoadingStatus();
+        incoming.alt = slide.alt;
+        caption.textContent = slide.caption;
+        counter.textContent = `${target + 1} / ${slides.length} · ${slide.category}`;
         incoming.style.opacity = "1";
         outgoing.style.opacity = "0";
         outgoing.alt = "";
         activeImageIndex = incomingIndex;
-        status.textContent = "";
-      };
-      const showError = () => {
-        if (token !== renderToken) return;
-        incoming.style.opacity = "0";
-        status.textContent = "No se pudo cargar esta foto. Puedes seguir navegando.";
-      };
+        current = target;
+        preloadAdjacent(current);
+        return true;
+      } catch {
+        if (token !== renderToken) return false;
 
-      incoming.addEventListener("load", reveal, { once: true });
-      incoming.addEventListener("error", showError, { once: true });
-      incoming.src = slide.src;
-      if (incoming.complete && incoming.naturalWidth > 0) reveal();
+        clearLoadingStatus();
+        incoming.style.opacity = "0";
+        requested = current;
+        status.textContent = "No se pudo cargar esta foto. Puedes seguir navegando.";
+        return true;
+      }
     };
 
     const stopAutoplay = () => {
@@ -85,29 +168,44 @@ class HotelGallery extends HTMLElement {
     const scheduleAutoplay = () => {
       stopAutoplay();
       autoplayTimer = window.setTimeout(() => {
-        show(current + 1);
-        scheduleAutoplay();
+        void show(current + 1).then((isLatestRequest) => {
+          if (isLatestRequest && dialog.open) scheduleAutoplay();
+        });
       }, 4000);
     };
 
     const showManually = (step: number) => {
-      show(current + step);
-      scheduleAutoplay();
+      stopAutoplay();
+      void show(requested + step).then((isLatestRequest) => {
+        if (isLatestRequest && dialog.open) scheduleAutoplay();
+      });
     };
+
+    const preloadFirstSlide = () => {
+      void preload(0).catch(() => undefined);
+    };
+
+    openButton.addEventListener("pointerenter", preloadFirstSlide, options);
+    openButton.addEventListener("pointerdown", preloadFirstSlide, options);
+    openButton.addEventListener("focus", preloadFirstSlide, options);
 
     openButton.addEventListener("click", () => {
       if (dialog.open) return;
       renderToken++;
+      clearLoadingStatus();
       images.forEach((galleryImage) => {
         galleryImage.style.opacity = "0";
         galleryImage.alt = "";
       });
       activeImageIndex = 0;
-      show(0);
+      current = 0;
+      requested = 0;
       dialog.showModal();
       savedOverflow = document.body.style.overflow;
       document.body.style.overflow = "hidden";
-      scheduleAutoplay();
+      void show(0).then((isLatestRequest) => {
+        if (isLatestRequest && dialog.open) scheduleAutoplay();
+      });
     }, options);
     closeButton.addEventListener("click", () => dialog.close(), options);
     previous.addEventListener("click", () => showManually(-1), options);
@@ -134,6 +232,8 @@ class HotelGallery extends HTMLElement {
     dialog.addEventListener("close", () => {
       stopAutoplay();
       renderToken++;
+      requested = current;
+      clearLoadingStatus();
       restoreScroll();
       openButton.focus({ preventScroll: true });
     }, options);
@@ -141,6 +241,7 @@ class HotelGallery extends HTMLElement {
     this.cleanup = () => {
       stopAutoplay();
       renderToken++;
+      clearLoadingStatus();
       events.abort();
       if (dialog.open) dialog.close();
       restoreScroll();

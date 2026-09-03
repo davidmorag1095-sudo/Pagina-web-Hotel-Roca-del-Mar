@@ -16,6 +16,7 @@ El procedimiento obligatorio para commits y publicaciones está definido en `FLU
 
 ## Índice actual
 
+- `2026-09-03-precarga-lightboxes.md`: precarga adyacente y decodificación previa en ambos lightboxes para mantener visible la foto actual y evitar estados de carga durante transiciones normales.
 - `2026-09-03-landmark-main-semantica-direccion.md`: incorporación de un único landmark `<main>` y marcado semántico de la dirección física sin cambios visuales.
 - `2026-09-03-optimizacion-logo-svg.md`: reducción conservadora del peso y la complejidad del logo vectorial, manteniendo colores, proporciones, transparencia y apariencia en Navbar y Footer.
 - `2026-09-03-optimizacion-imagen-hero.md`: optimización responsive de la fotografía actual del Hero mediante Astro, con variantes WebP y JPEG sin alterar su diseño ni encuadre.
