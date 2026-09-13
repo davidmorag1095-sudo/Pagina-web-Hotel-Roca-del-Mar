@@ -1,5 +1,59 @@
 ---
+import { getImage } from "astro:assets";
+import heroImage from "../assets/images/hero/Foto piscina con hotel de fondo soleado V2.png";
+import roomImage from "../assets/images/habitaciones/Habitacion familiar horizontal.png";
+import poolImage from "../assets/images/piscina/Vista de la piscina esquina derecha desde arriba, sol.png";
+import hotelLogo from "../assets/logo/logo-hotel-la-roca-del-mar.svg";
+import { contact } from "../config/contact";
 import "../styles/global.css";
+
+const title = "Hotel La Roca del Mar | Puntarenas, Costa Rica";
+const description =
+  "Hotel La Roca del Mar en Puntarenas, Costa Rica: comodidad, tranquilidad y una ubicación ideal cerca del mar.";
+const siteUrl = Astro.site ?? new URL("https://hotelrocadelmar.com");
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const homeUrl = new URL("/", siteUrl).href;
+
+const [socialImage, hotelPoolImage, hotelRoomImage] = await Promise.all([
+  getImage({
+    src: heroImage,
+    width: 1200,
+    height: 630,
+    fit: "cover",
+    format: "jpg",
+    quality: 85,
+  }),
+  getImage({ src: poolImage, width: 1200, format: "jpg", quality: 82 }),
+  getImage({ src: roomImage, width: 1200, format: "jpg", quality: 82 }),
+]);
+
+const socialImageUrl = new URL(socialImage.src, siteUrl).href;
+const logoUrl = new URL(hotelLogo.src, siteUrl).href;
+const hotelImages = [
+  socialImageUrl,
+  new URL(hotelPoolImage.src, siteUrl).href,
+  new URL(hotelRoomImage.src, siteUrl).href,
+];
+
+const hotelSchema = {
+  "@context": "https://schema.org",
+  "@type": "Hotel",
+  "@id": `${homeUrl}#hotel`,
+  name: "Hotel La Roca del Mar",
+  url: homeUrl,
+  description,
+  image: hotelImages,
+  logo: logoUrl,
+  telephone: "+50688962637",
+  email: contact.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Calle 44, Barrio El Cocal",
+    addressLocality: "Puntarenas",
+    addressCountry: "CR",
+  },
+  sameAs: [contact.facebookUrl, contact.instagramUrl, contact.bookingUrl],
+};
 ---
 
 <!doctype html>
@@ -7,11 +61,33 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Hotel La Roca del Mar en Puntarenas, Costa Rica: comodidad, tranquilidad y una ubicación ideal cerca del mar."
-    />
-    <title>Hotel La Roca del Mar | Puntarenas, Costa Rica</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href={hotelLogo.src} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Piscina y exteriores del Hotel La Roca del Mar en Puntarenas" />
+    <meta property="og:locale" content="es_CR" />
+    <meta property="og:site_name" content="Hotel La Roca del Mar" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <meta name="twitter:image:alt" content="Piscina y exteriores del Hotel La Roca del Mar en Puntarenas" />
+
+    <title>{title}</title>
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(hotelSchema).replace(/</g, "\\u003c")}
+    ></script>
   </head>
   <body>
     <slot />

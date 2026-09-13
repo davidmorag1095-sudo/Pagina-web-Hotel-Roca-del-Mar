@@ -16,6 +16,7 @@ El procedimiento obligatorio para commits y publicaciones está definido en `FLU
 
 ## Índice actual
 
+- `2026-09-12-seo-tecnico-produccion.md`: configuración SEO de producción con dominio oficial, canonical, metadata social, Schema `Hotel`, sitemap, robots y favicon existente.
 - `2026-09-12-versiones-horizontales-galeria-exterior.md`: creación e integración de copias horizontales 4:3 para las fotografías verticales de la galería de áreas del hotel, conservando los originales.
 - `2026-09-12-rediseño-lightbox-exteriores.md`: panel fijo, contenido dinámico y miniaturas navegables para la galería de áreas exteriores, sin alterar el lightbox de habitaciones.
 - `2026-09-12-rediseño-lightbox-habitaciones.md`: nueva composición editorial del lightbox de habitaciones con panel informativo, imagen protagonista, miniaturas y adaptación responsive.
