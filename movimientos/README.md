@@ -1,6 +1,6 @@
 # Movimientos del proyecto
 
-**Última revisión:** 3 de septiembre de 2026
+**Última revisión:** 12 de septiembre de 2026
 
 Esta carpeta mantiene separados del código del sitio los prompts reutilizables, las decisiones y los resúmenes de cambios realizados con Codex.
 
@@ -16,6 +16,10 @@ El procedimiento obligatorio para commits y publicaciones está definido en `FLU
 
 ## Índice actual
 
+- `2026-09-12-versiones-horizontales-galeria-exterior.md`: creación e integración de copias horizontales 4:3 para las fotografías verticales de la galería de áreas del hotel, conservando los originales.
+- `2026-09-12-rediseño-lightbox-exteriores.md`: panel fijo, contenido dinámico y miniaturas navegables para la galería de áreas exteriores, sin alterar el lightbox de habitaciones.
+- `2026-09-12-rediseño-lightbox-habitaciones.md`: nueva composición editorial del lightbox de habitaciones con panel informativo, imagen protagonista, miniaturas y adaptación responsive.
+- `2026-09-12-integracion-nuevas-fotos-galerias.md`: incorporación de nuevas fotografías reales y versiones horizontales de alta fidelidad para la galería de habitaciones, sin repetir sus tres portadas.
 - `2026-09-03-precarga-lightboxes.md`: precarga adyacente y decodificación previa en ambos lightboxes para mantener visible la foto actual y evitar estados de carga durante transiciones normales.
 - `2026-09-03-landmark-main-semantica-direccion.md`: incorporación de un único landmark `<main>` y marcado semántico de la dirección física sin cambios visuales.
 - `2026-09-03-optimizacion-logo-svg.md`: reducción conservadora del peso y la complejidad del logo vectorial, manteniendo colores, proporciones, transparencia y apariencia en Navbar y Footer.
