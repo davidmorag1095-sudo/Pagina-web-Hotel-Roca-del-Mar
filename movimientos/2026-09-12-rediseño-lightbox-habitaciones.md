@@ -35,4 +35,6 @@ Dar a la galería de habitaciones una composición editorial más amplia y útil
 
 ## Git
 
-- No se realizó commit ni push.
+- Implementación: `5aae08a feat: redesign hotel gallery lightboxes`.
+- Documentación inicial: `fa5ad96 docs: document gallery improvements`.
+- Ambos commits se publicaron en `origin/main`.

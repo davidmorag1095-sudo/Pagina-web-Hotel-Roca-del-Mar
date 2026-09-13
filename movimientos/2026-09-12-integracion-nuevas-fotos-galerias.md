@@ -28,4 +28,7 @@ Incorporar a la página las nuevas fotografías reales organizadas en las carpet
 
 ## Git
 
-- No se realizó commit ni push.
+- Recursos fotográficos: `84f0790 chore: add updated hotel gallery photos`.
+- Integración en las galerías: `5aae08a feat: redesign hotel gallery lightboxes`.
+- Documentación inicial: `fa5ad96 docs: document gallery improvements`.
+- Los tres commits se publicaron en `origin/main`.

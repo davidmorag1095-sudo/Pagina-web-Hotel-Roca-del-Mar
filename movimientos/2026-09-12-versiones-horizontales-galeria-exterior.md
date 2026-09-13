@@ -28,4 +28,7 @@ Adaptar las fotografías verticales utilizadas por la galería de áreas del hot
 
 ## Git
 
-- No se realizó commit ni push.
+- Recursos fotográficos: `84f0790 chore: add updated hotel gallery photos`.
+- Integración en el lightbox: `5aae08a feat: redesign hotel gallery lightboxes`.
+- Documentación inicial: `fa5ad96 docs: document gallery improvements`.
+- Los tres commits se publicaron en `origin/main`.

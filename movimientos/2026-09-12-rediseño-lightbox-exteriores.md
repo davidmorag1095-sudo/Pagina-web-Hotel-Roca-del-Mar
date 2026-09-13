@@ -30,4 +30,6 @@ Transformar la galería exterior en una composición editorial con panel informa
 
 ## Git
 
-- No se realizó commit ni push.
+- Implementación: `5aae08a feat: redesign hotel gallery lightboxes`.
+- Documentación inicial: `fa5ad96 docs: document gallery improvements`.
+- Ambos commits se publicaron en `origin/main`.
