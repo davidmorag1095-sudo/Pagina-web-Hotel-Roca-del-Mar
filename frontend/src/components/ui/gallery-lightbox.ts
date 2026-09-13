@@ -1,8 +1,13 @@
 interface GallerySlide {
   src: string;
+  thumbnail?: string;
   alt: string;
   caption: string;
   category: string;
+  panelTitle?: string;
+  roomName?: string;
+  facts?: string[];
+  description?: string;
 }
 
 class HotelGallery extends HTMLElement {
@@ -15,13 +20,19 @@ class HotelGallery extends HTMLElement {
     const closeButton = this.querySelector<HTMLButtonElement>("[data-gallery-close]");
     const previous = this.querySelector<HTMLButtonElement>("[data-gallery-previous]");
     const next = this.querySelector<HTMLButtonElement>("[data-gallery-next]");
+    const layers = Array.from(this.querySelectorAll<HTMLElement>("[data-gallery-layer]"));
     const images = Array.from(this.querySelectorAll<HTMLImageElement>("[data-gallery-image]"));
     const caption = this.querySelector<HTMLElement>("[data-gallery-caption]");
     const counter = this.querySelector<HTMLElement>("[data-gallery-counter]");
     const status = this.querySelector<HTMLElement>("[data-gallery-status]");
+    const dynamicContent = this.querySelector<HTMLElement>("[data-gallery-dynamic]");
+    const description = this.querySelector<HTMLElement>("[data-gallery-description]");
+    const progress = this.querySelector<HTMLElement>("[data-gallery-progress]");
+    const factItems = Array.from(this.querySelectorAll<HTMLElement>("[data-gallery-fact]"));
+    const thumbnails = Array.from(this.querySelectorAll<HTMLButtonElement>("[data-gallery-thumbnail]"));
     const data = this.querySelector<HTMLScriptElement>("[data-gallery-images]");
 
-    if (!dialog || !openButton || !closeButton || !previous || !next || images.length !== 2 || !caption || !counter || !status || !data) return;
+    if (!dialog || !openButton || !closeButton || !previous || !next || layers.length !== 2 || images.length !== 2 || !caption || !counter || !status || !data) return;
 
     const slides: GallerySlide[] = JSON.parse(data.textContent ?? "[]");
     if (!slides.length) return;
@@ -112,6 +123,34 @@ class HotelGallery extends HTMLElement {
       }
     };
 
+    const updateSupplementalContent = (slide: GallerySlide, index: number) => {
+      factItems.forEach((item, factIndex) => {
+        const fact = slide.facts?.[factIndex];
+        const text = item.querySelector<HTMLElement>("[data-gallery-fact-text]");
+        item.hidden = !fact;
+        item.classList.toggle("flex", Boolean(fact));
+        if (text) text.textContent = fact ?? "";
+      });
+
+      if (description) {
+        description.textContent = slide.description ?? "";
+        description.hidden = !slide.description;
+      }
+
+      if (progress) progress.style.width = `${((index + 1) / slides.length) * 100}%`;
+
+      thumbnails.forEach((thumbnail, thumbnailIndex) => {
+        const isActive = thumbnailIndex === index;
+        thumbnail.dataset.active = isActive ? "true" : "false";
+        if (isActive) {
+          thumbnail.setAttribute("aria-current", "true");
+          thumbnail.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
+        } else {
+          thumbnail.removeAttribute("aria-current");
+        }
+      });
+    };
+
     const show = async (index: number) => {
       const target = normalizeIndex(index);
       requested = target;
@@ -120,12 +159,14 @@ class HotelGallery extends HTMLElement {
       const incomingIndex = activeImageIndex === 0 ? 1 : 0;
       const incoming = images[incomingIndex];
       const outgoing = images[activeImageIndex];
+      const incomingLayer = layers[incomingIndex];
+      const outgoingLayer = layers[activeImageIndex];
 
       clearLoadingStatus();
       loadingStatusTimer = window.setTimeout(() => {
         if (token === renderToken) status.textContent = "Cargando foto…";
       }, 900);
-      incoming.style.opacity = "0";
+      incomingLayer.style.opacity = "0";
       incoming.alt = "";
 
       try {
@@ -136,12 +177,22 @@ class HotelGallery extends HTMLElement {
         await waitUntilReady(incoming);
         if (token !== renderToken) return false;
 
+        if (dynamicContent) {
+          dynamicContent.style.opacity = "0";
+          await new Promise((resolve) => window.setTimeout(resolve, 120));
+          if (token !== renderToken) return false;
+        }
+
         clearLoadingStatus();
         incoming.alt = slide.alt;
-        caption.textContent = slide.caption;
-        counter.textContent = `${target + 1} / ${slides.length} · ${slide.category}`;
-        incoming.style.opacity = "1";
-        outgoing.style.opacity = "0";
+        caption.textContent = slide.roomName ?? slide.panelTitle ?? slide.caption;
+        counter.textContent = slide.roomName || slide.panelTitle
+          ? `${target + 1} / ${slides.length}`
+          : `${target + 1} / ${slides.length} · ${slide.category}`;
+        updateSupplementalContent(slide, target);
+        if (dynamicContent) dynamicContent.style.opacity = "1";
+        incomingLayer.style.opacity = "1";
+        outgoingLayer.style.opacity = "0";
         outgoing.alt = "";
         activeImageIndex = incomingIndex;
         current = target;
@@ -151,7 +202,7 @@ class HotelGallery extends HTMLElement {
         if (token !== renderToken) return false;
 
         clearLoadingStatus();
-        incoming.style.opacity = "0";
+        incomingLayer.style.opacity = "0";
         requested = current;
         status.textContent = "No se pudo cargar esta foto. Puedes seguir navegando.";
         return true;
@@ -181,6 +232,13 @@ class HotelGallery extends HTMLElement {
       });
     };
 
+    const showSelected = (index: number) => {
+      stopAutoplay();
+      void show(index).then((isLatestRequest) => {
+        if (isLatestRequest && dialog.open) scheduleAutoplay();
+      });
+    };
+
     const preloadFirstSlide = () => {
       void preload(0).catch(() => undefined);
     };
@@ -193,8 +251,11 @@ class HotelGallery extends HTMLElement {
       if (dialog.open) return;
       renderToken++;
       clearLoadingStatus();
+      if (dynamicContent) dynamicContent.style.opacity = "1";
+      layers.forEach((layer) => {
+        layer.style.opacity = "0";
+      });
       images.forEach((galleryImage) => {
-        galleryImage.style.opacity = "0";
         galleryImage.alt = "";
       });
       activeImageIndex = 0;
@@ -210,13 +271,19 @@ class HotelGallery extends HTMLElement {
     closeButton.addEventListener("click", () => dialog.close(), options);
     previous.addEventListener("click", () => showManually(-1), options);
     next.addEventListener("click", () => showManually(1), options);
+    thumbnails.forEach((thumbnail) => {
+      thumbnail.addEventListener("click", () => {
+        const index = Number(thumbnail.dataset.galleryThumbnailIndex);
+        if (Number.isInteger(index)) showSelected(index);
+      }, options);
+    });
 
     dialog.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         event.preventDefault();
         dialog.close();
       } else if (event.key === "Tab") {
-        const controls = [closeButton, previous, next];
+        const controls = [closeButton, previous, ...thumbnails, next];
         const focused = controls.indexOf(document.activeElement as HTMLButtonElement);
         const step = event.shiftKey ? -1 : 1;
         event.preventDefault();

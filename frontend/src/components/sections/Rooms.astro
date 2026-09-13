@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import { roomImages } from "../../data/room-images";
 import { roomGalleryPhotos } from "../../data/room-gallery";
-import GalleryLightbox from "../ui/GalleryLightbox.astro";
+import RoomGalleryLightbox from "../ui/RoomGalleryLightbox.astro";
 
 const rooms = [
   {
@@ -12,22 +12,25 @@ const rooms = [
     recommendedFor: "Ideal para 2 a 4 personas",
     image: roomImages.doubleWithFan,
     alt: "Habitación doble con ventilador y dos camas",
+    imageClass: "h-full w-full object-cover object-center",
   },
   {
     name: "Habitación doble",
     climate: "Aire acondicionado",
     configuration: "2 camas",
     recommendedFor: "Ideal para 2 a 4 personas",
-    image: roomImages.doubleWithAir,
-    alt: "Habitación doble del hotel con dos camas",
+    image: roomImages.doubleWithAirAlternate,
+    alt: "Habitación del hotel con dos camas",
+    imageClass: "h-full w-full object-cover object-center",
   },
   {
     name: "Habitación familiar",
     climate: "Aire acondicionado",
     configuration: "1 cama + 1 camarote",
     recommendedFor: "Ideal para familias o grupos pequeños",
-    image: roomImages.family,
+    image: roomImages.familyHorizontal,
     alt: "Habitación familiar del hotel con cama y camarote",
+    imageClass: "h-full w-full object-cover object-center",
   },
 ] as const;
 ---
@@ -65,7 +68,7 @@ const rooms = [
                 format="webp"
                 quality={84}
                 loading="lazy"
-                class="h-full w-full object-contain"
+                class={room.imageClass}
               />
             ) : (
               <div class="flex h-full flex-col items-center justify-center gap-3 px-6 text-center text-[#6b777c]">
@@ -102,12 +105,8 @@ const rooms = [
     </p>
 
     <div class="text-center">
-      <GalleryLightbox
+      <RoomGalleryLightbox
         photos={roomGalleryPhotos}
-        galleryId="room-gallery"
-        title="Galería de habitaciones"
-        triggerLabel="Ver galería de habitaciones"
-        closeLabel="Cerrar galería de habitaciones"
       />
     </div>
   </div>

@@ -1,20 +1,23 @@
 import type { ImageMetadata } from "astro";
 import poolOverview from "../assets/images/piscina/Vista de la piscina esquina derecha desde arriba, sol.png";
 import poolTerrace from "../assets/images/piscina/Foto Piscina y mesas lado soda desde abajo sol.png";
-import poolGarden from "../assets/images/piscina/Planta piscina y hotel de fondo sol.png";
+import poolGarden from "../assets/images/piscina/Planta piscina y hotel de fondo sol horizontal.png";
 import poolBalcony from "../assets/images/piscina/Vista de la piscina esquina izquierda desde arriba, sol.png";
-import palms from "../assets/images/exteriores/Palmeras entradas al hotel al frente de soda sol.png";
+import poolWithGuests from "../assets/images/piscina/Piscina con gente horizontal.png";
+import palms from "../assets/images/exteriores/Palmeras entradas al hotel al frente de soda sol horizontal.png";
 import cactus from "../assets/images/exteriores/Foto cactus con fondo de piscina y hotel sol.png";
 import courtyard from "../assets/images/exteriores/Foto piscina desde el lado de la soda sol.png";
-import sloth from "../assets/images/exteriores/Oso peresozo  sol.png";
-import sunset from "../assets/images/exteriores/Atardecer.jpg";
+import sloth from "../assets/images/exteriores/Oso peresozo horizontal.png";
+import sunset from "../assets/images/exteriores/Atardecer horizontal.png";
 import sea from "../assets/images/mar/Vista trasera Playa sol.png";
-import leftWalkway from "../assets/images/pasillos/Pasillo izquierdo arriba sol.png";
-import mainWalkway from "../assets/images/pasillos/Pasillo principal arriba sol.png";
-import rearWalkway from "../assets/images/pasillos/Pasillo trasero arriba sol.png";
+import moonlitBeach from "../assets/images/mar/Playa con la luna de fondo horizontal.png";
+import beachAtNight from "../assets/images/mar/Playa de noche horizontal.png";
+import leftWalkway from "../assets/images/pasillos/Pasillo izquierdo arriba sol horizontal.png";
+import mainWalkway from "../assets/images/pasillos/Pasillo principal arriba sol horizontal.png";
+import rearWalkway from "../assets/images/pasillos/Pasillo trasero arriba sol horizontal.png";
 import receptionEntrance from "../assets/images/entrada-parqueo/Entrada principal hotel con vista a la recepcion y parqueo de fondo sol.png";
-import parkingEntrance from "../assets/images/entrada-parqueo/Foto entrada al hotel con vista a todo el parqueo, sol.png";
-import rearParking from "../assets/images/entrada-parqueo/Parqueo parte trase desde arriba sol.png";
+import parkingEntrance from "../assets/images/entrada-parqueo/Foto entrada al hotel con vista a todo el parqueo, sol horizontal.png";
+import rearParking from "../assets/images/entrada-parqueo/Parqueo parte trase desde arriba sol horizontal.png";
 import parkingEntrance2 from "../assets/images/entrada-parqueo/Hotel vista inicial desde afuera sol.png";
 const currentPoolOverview = { ...poolOverview };
 const currentPalms = { ...palms };
@@ -83,6 +86,12 @@ export const galleryPhotos: GalleryPhoto[] = [
     category: "Piscina",
   },
   {
+    image: poolWithGuests,
+    alt: "Huéspedes disfrutando la piscina y las áreas sociales del hotel",
+    caption: "Momentos para compartir junto a la piscina",
+    category: "Piscina",
+  },
+  {
     image: currentPalms,
     alt: "Palmeras y jardines junto a la escalera roja del hotel",
     caption: "Entre palmeras y jardines",
@@ -117,6 +126,18 @@ export const galleryPhotos: GalleryPhoto[] = [
     image: sea,
     alt: "Vista del mar y las palmeras desde la parte trasera del hotel",
     caption: "El Pacífico, a pasos del hotel",
+    category: "Mar",
+  },
+  {
+    image: moonlitBeach,
+    alt: "Playa y palmeras iluminadas por la luna frente al hotel",
+    caption: "La playa bajo la luz de la luna",
+    category: "Mar",
+  },
+  {
+    image: beachAtNight,
+    alt: "Playa de noche vista entre las palmeras",
+    caption: "El mar al caer la noche",
     category: "Mar",
   },
   {
